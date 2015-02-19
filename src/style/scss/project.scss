@@ -10,11 +10,16 @@
 .page-wrap {
 	text-align: center;
 	padding: none;
-	background: url(/img/bg1.svg) no-repeat 50% 70%;
-	background-color: #fff;
 	max-width: 320px;
 	font-family: "Futura Today Light";
-
+	&.index {
+		background: url(/img/bg1.svg) no-repeat 50% 70%;
+		background-color: #fff;
+	}
+	&.content {
+		background: url(/img/bg2.svg) no-repeat 50% 50%;
+		background-color: #404041;
+	}
 }
 
 .container {
@@ -25,12 +30,19 @@
     padding: 1em 0 0 0;
     background-color: #404041;
     &.foot {
+    	bottom: 0;
     	padding: 1em 0 .3em 0;
+    	max-height: 5em;
     }
 }
 
 .text {
 	margin: 2em 2em 1em 2em;
+}
+
+.stcont {
+	width: 80%;
+	padding: 0 0 1em 1em;
 }
 
 // ---------- IMAGES ----------- //
@@ -52,32 +64,75 @@ img {
 	margin: 0 .5em 0 0;
 }
 
+.states {
+	float: left;
+	top: -.5em;
+	max-width: 50%;
+	margin: 0 3em 0 1em;
+}
+
+.range {
+	width: 20%;
+	bottom: 20em;
+	float: right;
+}
+
 
 // ---------- BUTTONS ---------- //
 .button {
 	width: 150px;
 	box-shadow: $shadow-standard;
-	border-radius: .8em;
+	border-radius: 0.8em;
 	display: inline-block;
 	margin: 0 0 1em 0;
-	padding: .7em;
+	padding: 0.7em;
 }
 
 .ftbutton {
+  width: auto;
+  display: inline-block;
   background-color: none;
   color: white;
-  margin: 0 auto;
-  padding: .5em;
+  margin: 0 3px;
+  padding: 0.5em;
   text-align: center;
   text-transform: uppercase;
   transition: background-color .5s;
-  width: 100px;
-  border: .1em solid;
+  border: 0.1em solid;
   border-color: $light-grey;
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: $medium-grey;
     transition: background-color .5s;
   }
+}
 
+.stbutton {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	color: #404041;
+	text-align: center;
+	margin: 1px;
+	padding: 1em;
+	text-transform: uppercase;
+	transition: background-color .5s;
+	&.light {
+		background-color: #fff;
+		opacity: 0.6;
+	}
+	&.medium {
+		background-color: #808184;
+	}
+	&.dark {
+		background-color: #58595B;
+	}
+	&.none {
+		background-color: #000;
+	}
+	&:hover {
+		cursor: pointer;
+		background-color: #404041;
+		transition: background-color .5s;
+	}
 }
