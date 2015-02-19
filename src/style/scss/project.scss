@@ -22,6 +22,37 @@
 	}
 }
 
+.text {
+	margin: 2em 2em 1em 2em;
+	&.chatt {
+		margin: 0 1em 1em 2em;
+		color: #a6a8ab;
+		text-align: left;
+	}
+	&.labnm {
+		margin: 0 1em 1em 2em;
+		color: #fff;
+		text-align: left;
+	}
+}
+
+.hr1 {
+	margin: 0 1em 1em 2em;
+	background:  #a6a8ab;
+	height: 2px;
+	border: 0.8px solid;
+	border-color: #000;
+}
+
+.hr2 {
+	margin: 0 1em 1em 2em;
+	background:  #fff;
+	height: 1px;
+	opacity: 0.4;
+}
+
+// --------- CONTAINTERS -------- //
+
 .container {
     width: 100%;
     max-height: 9em;
@@ -36,16 +67,13 @@
     }
 }
 
-.text {
-	margin: 2em 2em 1em 2em;
-}
-
 .stcont {
 	width: 80%;
 	padding: 0 0 1em 1em;
 }
 
 // ---------- IMAGES ----------- //
+
 img {
 	max-width: 1000px;
 	position: relative;
@@ -64,9 +92,9 @@ img {
 	margin: 0 .5em 0 0;
 }
 
-.states {
-	float: left;
+.headimg {
 	top: -.5em;
+	left: -1em;
 	max-width: 50%;
 	margin: 0 3em 0 1em;
 }
@@ -79,6 +107,7 @@ img {
 
 
 // ---------- BUTTONS ---------- //
+
 .button {
 	width: 150px;
 	box-shadow: $shadow-standard;
