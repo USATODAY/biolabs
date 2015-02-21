@@ -5,7 +5,182 @@
 @import "card";
 @import "buttons";
 
+// ---------- GENERAL ---------- //
 
-body {
-	color: red !important;
+.page-wrap {
+	text-align: center;
+	padding: none;
+	max-width: 320px;
+	font-family: "Futura Today Light";
+	&.index {
+		background: url(/img/bg1.svg) no-repeat 50% 70%;
+		background-color: #fff;
+	}
+	&.content {
+		background: url(/img/bg2.svg) no-repeat 50% 50%;
+		background-color: #404041;
+	}
+}
+
+.text {
+	margin: 2em 2em 1em 2em;
+	&.chatt {
+		margin: 0 1em 1em 2em;
+		color: #a6a8ab;
+		text-align: left;
+	}
+	&.labnm {
+		margin: 0 1em .5em 2em;
+		color: #fff;
+		text-align: left;
+		&:hover {
+    		cursor: pointer;
+    		color: #000;
+    		text-decoration: none;
+		}
+}
+	}
+
+.link {
+	text-decoration: none;
+}
+
+.hr1 {
+	margin: 0 1em 1em 2em;
+	background:  #a6a8ab;
+	height: 3px;
+	border: 0.8px solid;
+	border-color: #000;
+}
+
+.hr2 {
+	margin: 1em 1em 1em 2em;
+	background:  #fff;
+	height: 1px;
+	opacity: 0.4;
+}
+
+// --------- CONTAINTERS -------- //
+
+.container {
+    width: 100%;
+    max-height: 9em;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 1em 0 0 0;
+    background-color: #404041;
+    &.foot {
+    	bottom: 0;
+    	padding: 1em 0 .3em 0;
+    	max-height: 5em;
+    }
+}
+
+.stcont {
+	width: 80%;
+	padding: 0 0 1em 1em;
+}
+
+// ---------- IMAGES ----------- //
+
+img {
+	max-width: 1000px;
+	position: relative;
+}
+
+.logo {
+	top: -2em;
+	overflow: visible;
+	max-width: 16em;
+}
+
+.info {
+	top: -.7em;
+	max-width: 1.7em;
+	float: right;
+	margin: 0 .5em 0 0;
+}
+
+.headimg {
+	top: -.5em;
+	left: -1em;
+	max-width: 50%;
+	margin: 0 3em 0 1em;
+	&.vt {
+		top: -2em;
+		left: -.3em;
+		max-width: 70%;
+	}
+}
+
+.range {
+	width: 20%;
+	bottom: 20em;
+	float: right;
+}
+
+.photo {
+	margin: 0 1em 1em 2em;
+}
+
+
+// ---------- BUTTONS ---------- //
+
+.button {
+	width: 150px;
+	box-shadow: $shadow-standard;
+	border-radius: 0.8em;
+	display: inline-block;
+	margin: 0 0 1em 0;
+	padding: 0.7em;
+}
+
+.ftbutton {
+  width: auto;
+  display: inline-block;
+  background-color: none;
+  color: white;
+  margin: 0 3px;
+  padding: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  border: 0.1em solid;
+  border-color: $light-grey;
+  opacity: 0.7;
+  &:hover {
+    cursor: pointer;
+    background-color: $medium-grey;
+    transition: background-color .5s;
+  }
+}
+
+.stbutton {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	color: #404041;
+	text-align: center;
+	margin: 1px;
+	padding: 1em;
+	text-transform: uppercase;
+	transition: background-color .5s;
+	&.light {
+		background-color: #fff;
+		opacity: 0.6;
+	}
+	&.medium {
+		background-color: #808184;
+	}
+	&.dark {
+		background-color: #58595B;
+	}
+	&.none {
+		background-color: #000;
+	}
+	&:hover {
+		cursor: pointer;
+		background-color: #404041;
+		transition: background-color .5s;
+	}
 }
