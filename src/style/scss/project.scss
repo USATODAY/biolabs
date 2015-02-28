@@ -35,7 +35,7 @@
 		text-align: left;
 		&:hover {
     		cursor: pointer;
-    		color: #000;
+    		color: $blue;
     		text-decoration: none;
 		}
 }
@@ -176,11 +176,11 @@ img {
 		background-color: #58595B;
 	}
 	&.none {
-		background-color: #000;
+		background-color: #fff;
 	}
 	&:hover {
 		cursor: pointer;
-		background-color: #404041;
+		background-color: $blue;
 		transition: background-color .5s;
 	}
 }
