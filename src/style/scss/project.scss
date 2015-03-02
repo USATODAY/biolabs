@@ -9,9 +9,11 @@
 
 .page-wrap {
 	text-align: center;
-	padding: none;
-	max-width: 320px;
+	padding: 0;
+    height: calc(100% - 40px);
+	max-width: 600px;
 	font-family: "Futura Today Light";
+    position: relative;
 	&.index {
 		background: url(/img/bg1.svg) no-repeat 50% 70%;
 		background-color: #fff;
@@ -19,7 +21,12 @@
 	&.content {
 		background: url(/img/bg2.svg) no-repeat 50% 50%;
 		background-color: #404041;
+        overflow: hidden;
+        @extend .group;
 	}
+    @media(max-width: 600px) {
+        width: 100%;
+    }
 }
 
 .text {
@@ -29,6 +36,9 @@
 		color: #a6a8ab;
 		text-align: left;
 	}
+    &.lab-body {
+        margin-bottom: 200px;
+    }
 	&.labnm {
 		margin: 0 1em .5em 2em;
 		color: #fff;
@@ -67,12 +77,14 @@
     max-height: 9em;
     margin: 0 auto;
     overflow: visible;
-    padding: 1em 0 0 0;
+    padding: 0 0 0 0;
     background-color: #404041;
     &.foot {
     	bottom: 0;
-    	padding: 1em 0 .3em 0;
-    	max-height: 5em;
+    	padding: 2em 0 .3em 0;
+        position: fixed;
+        max-width: 600px;
+    	// max-height: 5em;
     }
 }
 
@@ -89,26 +101,29 @@ img {
 }
 
 .logo {
-	top: -2em;
+	// top: -2em;
 	overflow: visible;
 	max-width: 16em;
 }
 
 .info {
-	top: -.7em;
+	top: 0.5em;
+    right: 0.5em;
 	max-width: 1.7em;
 	float: right;
 	margin: 0 .5em 0 0;
+    position: absolute;
+    z-index: 10;
 }
 
 .headimg {
-	top: -.5em;
+	top: 0em;
 	left: -1em;
 	max-width: 50%;
 	margin: 0 3em 0 1em;
 	&.vt {
-		top: -2em;
-		left: -.3em;
+		// top: -2em;
+		// left: -.3em;
 		max-width: 70%;
 	}
 }
@@ -183,4 +198,18 @@ img {
 		background-color: $blue;
 		transition: background-color .5s;
 	}
+}
+
+.document-button {
+    background-color: $blue;
+    border-radius: 5px;
+    box-shadow: $shadow-standard;
+    color: white;
+    margin: 0 1em 1em 1em;
+    padding: 0.5em;
+    text-transform: uppercase;
+    width: calc(100% - 2em);
+    @media(max-width: 600px) {
+        display: none;
+    }
 }
