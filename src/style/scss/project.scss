@@ -4,8 +4,13 @@
 @import "typography";
 @import "card";
 @import "buttons";
+@import "panel";
 
 // ---------- GENERAL ---------- //
+.iapp-wrap {
+    overflow: hidden;
+}
+
 
 .page-wrap {
 	text-align: center;
@@ -214,7 +219,7 @@ img {
 		background-color: #58595B;
 	}
 	&.none {
-		background-color: #fff;
+		background-color: #000;
 	}
 	&:hover {
 		cursor: pointer;

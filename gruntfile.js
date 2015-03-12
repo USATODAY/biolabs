@@ -58,7 +58,7 @@ module.exports = function(grunt) {
     jshint: {
       options: {
         scripturl: true,
-        ignores: ['<%=config.src%>js/lib/*.js']
+        ignores: ['<%=config.src%>js/lib/*.js', '<%=config.src%>js/templates.js']
       },
       all: ['Gruntfile.js', 'test/*.js', '<%=config.src%>js/**/*.js']
     },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['<%=config.src%>js/**/*.js'],
-        tasks: ['requirejs:dev']
+        tasks: ['jshint', 'requirejs:dev']
       },
       jst: {
         files: ['<%=config.src%>templates/*'],
@@ -166,12 +166,11 @@ module.exports = function(grunt) {
             "underscore": '../../bower_components/underscore/underscore',
             "jquery_ui": "lib/jquery-ui.min",
             "jquery_ui_touch_punch": "lib/jquery.ui.touch-punch.min",
-            "analytics": "lib/analytics",
             "mobile_detect": "lib/mobile-detect",
             "d3": '../../bower_components/d3/d3',
-            "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed'
+            "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
               // "api/ads": "api/ads",
-              // "api/analytics": "api/analytics"
+              "api/analytics": "lib/analytics"
           },
           "shim": {
             'backbone': {
@@ -198,7 +197,8 @@ module.exports = function(grunt) {
             "exclude": [
               "jquery",
               "underscore",
-              "backbone"
+              "backbone",
+              "api/analytics"
             ]
           }],
           "baseUrl": "<%=config.src%>js",
@@ -221,9 +221,9 @@ module.exports = function(grunt) {
             "analytics": "lib/analytics",
             "mobile_detect": "lib/mobile-detect",
             "d3": '../../bower_components/d3/d3',
-            "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed'
+            "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
               // "api/ads": "api/ads",
-              // "api/analytics": "api/analytics"
+            "api/analytics": "api/analytics"
           },
           "shim": {
             'backbone': {
@@ -326,17 +326,17 @@ module.exports = function(grunt) {
       },
       upload1: {
         files: {
-          '/17200/experiments/usatoday/2015/02/biolabs-interactive/': 'js/main.js'
+          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'js/main.js'
         }
       },
       upload2: {
         files: {
-          '/17200/experiments/usatoday/2015/02/biolabs-interactive/': 'style/project.css'
+          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'style/project.css'
         }
       },
       upload3: {
         files: {
-          '/17200/experiments/usatoday/2015/02/biolabs-interactive/': 'data/*.json'
+          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'data/*.json'
         }
       }
     },
@@ -366,8 +366,8 @@ module.exports = function(grunt) {
 
   // Default task(s).
 
-  grunt.registerTask('default', ['clean:dev', 'jst', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'clean:tmp', 'browserSync:dev', 'watch']);
-  grunt.registerTask('test', ['clean:dev', 'jst', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'copy:test', 'clean:tmp', 'browserSync:test', 'watch']);
-  grunt.registerTask('build', ['clean:dev', 'jst', 'requirejs:deploy', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp'])
+  grunt.registerTask('default', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'clean:tmp', 'browserSync:dev', 'watch']);
+  grunt.registerTask('test', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'copy:test', 'clean:tmp', 'browserSync:test', 'watch']);
+  grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:deploy', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
   grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'clean:deploy']);
 };

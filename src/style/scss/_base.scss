@@ -36,3 +36,11 @@ body {
   display: table;
   clear: both;
 }
+
+.iapp-wrap, .iapp-panel{
+    height: 100%;
+}
+
+.iapp-wrap {
+    position: relative;
+}
