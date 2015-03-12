@@ -10,9 +10,10 @@ define(
         initialize: function() {
             
         },
-        className: 'iapp-panel active',
+        className: 'iapp-panel upcoming',
         template: templates['stateView.html'],
         render: function(data) {
+            console.log(this.collection);
             
             this.$el.html(this.template());
             return this;

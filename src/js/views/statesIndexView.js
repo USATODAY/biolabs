@@ -3,16 +3,16 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'templates'
+    'templates',
+    'views/stateIndexEntry'
   ],
-  function(jQuery, _, Backbone, templates) {
+  function(jQuery, _, Backbone, templates, StateIndexEntry) {
     return Backbone.View.extend({
         initialize: function() {
             
         },
         className: 'iapp-panel upcoming',
         template: templates['stateIndexView.html'],
-        stateEntryTemplate: _.template('<div class="stbutton medium"><%= abbreviation %></div>'),
         render: function(data) {
             
             //render this views template into this views element
@@ -23,7 +23,11 @@ define(
             
             //loop through all the states in the collection and append them to the element
             this.collection.each(function(stateModel) {
-                _this.$('.stcont').append(_this.stateEntryTemplate(stateModel.toJSON()));
+                var indexEntryView = new StateIndexEntry({model: stateModel});
+                
+                
+                //render each state button with the state model and className defined above
+                _this.$('.stcont').append(indexEntryView.el);
             });
             return this;
         }

@@ -3,10 +3,10 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'models/PersonModel'
+        'models/labModel'
     ], 
-    function(jQuery, _, Backbone, PersonModel) {
+    function(jQuery, _, Backbone, LabModel) {
         return Backbone.Collection.extend({
-            model: PersonModel
+            model: LabModel
         });
 });
