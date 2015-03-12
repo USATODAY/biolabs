@@ -6,11 +6,13 @@ define(
     'dataManager',
     'api/analytics',
     'views/IntroView',
+    'views/statesIndexView',
+    'collections/StateCollection',
     'router',
     'models/config',
     'templates'
   ],
-  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, router, config, templates){
+  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateCollection, router, config, templates){
         return Backbone.View.extend({
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
@@ -35,7 +37,7 @@ define(
                 Backbone.trigger("app:advance");
             },
             render: function() {
-               this.$el.append(this.template({logo: this.logoURL, title: dataManager.data.title, page_url: this.getURL()}));
+               this.$el.append(this.template());
                this.addSubViews();
                return this;
             },
@@ -45,6 +47,10 @@ define(
                var introView = new IntroView();
                this.$el.append(introView.render(dataManager.data).el);
                this.subViews.push(introView);
+
+               var stateIndexView = new StatesIndexView({collection: new StateCollection(dataManager.states)});
+               this.$el.append(stateIndexView.render().el);
+               this.subViews.push(stateIndexView);
             },
             currentSubView: 0,
             goForward: function() {

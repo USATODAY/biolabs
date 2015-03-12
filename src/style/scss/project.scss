@@ -4,8 +4,13 @@
 @import "typography";
 @import "card";
 @import "buttons";
+@import "panel";
 
 // ---------- GENERAL ---------- //
+.iapp-wrap {
+    overflow: hidden;
+}
+
 
 .page-wrap {
 	text-align: center;

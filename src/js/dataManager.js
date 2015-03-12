@@ -7,7 +7,7 @@ define(
   function(jQuery, _, Backbone) {
 
     var hostname = window.location.hostname;
-
+    var states = [{"name":"Alabama","abbreviation":"AL"},{"name":"Alaska","abbreviation":"AK"},{"name":"Arizona","abbreviation":"AZ"},{"name":"Arkansas","abbreviation":"AR"},{"name":"California","abbreviation":"CA"},{"name":"Colorado","abbreviation":"CO"},{"name":"Connecticut","abbreviation":"CT"},{"name":"Delaware","abbreviation":"DE"},{"name":"District Of Columbia","abbreviation":"DC"},{"name":"Florida","abbreviation":"FL"},{"name":"Georgia","abbreviation":"GA"},{"name":"Hawaii","abbreviation":"HI"},{"name":"Idaho","abbreviation":"ID"},{"name":"Illinois","abbreviation":"IL"},{"name":"Indiana","abbreviation":"IN"},{"name":"Iowa","abbreviation":"IA"},{"name":"Kansas","abbreviation":"KS"},{"name":"Kentucky","abbreviation":"KY"},{"name":"Louisiana","abbreviation":"LA"},{"name":"Maine","abbreviation":"ME"},{"name":"Maryland","abbreviation":"MD"},{"name":"Massachusetts","abbreviation":"MA"},{"name":"Michigan","abbreviation":"MI"},{"name":"Minnesota","abbreviation":"MN"},{"name":"Mississippi","abbreviation":"MS"},{"name":"Missouri","abbreviation":"MO"},{"name":"Montana","abbreviation":"MT"},{"name":"Nebraska","abbreviation":"NE"},{"name":"Nevada","abbreviation":"NV"},{"name":"New Hampshire","abbreviation":"NH"},{"name":"New Jersey","abbreviation":"NJ"},{"name":"New Mexico","abbreviation":"NM"},{"name":"New York","abbreviation":"NY"},{"name":"North Carolina","abbreviation":"NC"},{"name":"North Dakota","abbreviation":"ND"},{"name":"Ohio","abbreviation":"OH"},{"name":"Oklahoma","abbreviation":"OK"},{"name":"Oregon","abbreviation":"OR"},{"name":"Pennsylvania","abbreviation":"PA"},{"name":"Rhode Island","abbreviation":"RI"},{"name":"South Carolina","abbreviation":"SC"},{"name":"South Dakota","abbreviation":"SD"},{"name":"Tennessee","abbreviation":"TN"},{"name":"Texas","abbreviation":"TX"},{"name":"Utah","abbreviation":"UT"},{"name":"Vermont","abbreviation":"VT"},{"name":"Virginia","abbreviation":"VA"},{"name":"Washington","abbreviation":"WA"},{"name":"West Virginia","abbreviation":"WV"},{"name":"Wisconsin","abbreviation":"WI"},{"name":"Wyoming","abbreviation":"WY"}];
     var dataURL;
 
     if ((hostname == "localhost" || hostname == "10.0.2.2")) {
@@ -20,87 +20,34 @@ define(
     }
 
     return {
-        data: null,
+        data: {},
         getData: function() {
             var _this = this;
             jQuery.getJSON(dataURL, function(data) {        
-                _this.data = data;
+                _this.data.labs = data;
 
-                // call the organize tags function to get our tags
-                _this.organizeTags();
 
-                /***
-                 * loop through each item and format/clean up data
-                 * including standardizing video_clip slugs
-                 * and creating an actual image url
-                 */
-                _.each(_this.data.videos, function(videoObj) {
-
-                    videoObj.video_clip = videoObj.video_clip.toLowerCase().trim();
-
-                    videoObj.stillimage = _this.data.base_url + videoObj.stillimage;
-                });
-
-                // loop through all the people and create the image URL
-
-                _.each(_this.data.people, function(personObj) {
-                   personObj.person_still = _this.data.base_url + personObj.person_still;
-                });
+                _this.generateStates();
 
                 // trigger the dataReady Backbone even which kicks off the app 
                 Backbone.trigger("dataReady", this);
 
             });
         },
-        organizeTags: function() {
-            var _this = this;
-            var tags = [];
-
-            //loop through each data item and and get all the possible tags and put them in a master list
-            _.each(_this.data.videos, function(video) {
-                    
-                //split tags string into array (assumes it is a comma-seperated string list)
-                if (video.tags !== "") {
-                    video.tags = video.tags.toLowerCase();
-                    video.tags = video.tags.split(", ");
-                    video.tags = _.without(video.tags, "");
-
-                }
-
-                //loop through each tag in the array and turn it into object 
-
-                _.each(video.tags, function(tag) {
-                    //add each tag to master tags array
-                    
-                    var tagObj = {
-                        tagName: cleanTagName(tag),
-                        tagPretty: tag
-                    };
-
-                    tags.push(tagObj);
+        generateStates: function() {
+            // Loop through array of each us state, and find the number of biolabs in each. Add the nuber to state object.
+            _this = this;
+            this.data.states = states;
+            _.map(this.data.states, function(stateObj) {
+                labArray = _.filter(_this.data.labs, function(lab) {
+                    return lab.state == stateObj.name;
                 });
 
+                stateObj.labNum = labArray.length;
                 
-                video.tags = _.map(video.tags, function(tag) {
-                    return cleanTagName(tag);
-                });
-
-                function cleanTagName(tag) {
-                    return tag.trim().replace(/\s/g, "-");
-                }
-
+                return stateObj;
             });
-
-            //remove duplacate tags from array
-            var uniqueTags = _.uniq(tags, function(tag) {
-                return tag.tagName;
-            });
-
-            
-            this.data.tags = uniqueTags;
         },
         userName: ''
     };
-
-
 });
