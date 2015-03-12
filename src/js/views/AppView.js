@@ -48,7 +48,7 @@ define(
                this.$el.append(introView.render(dataManager.data).el);
                this.subViews.push(introView);
 
-               var stateIndexView = new StatesIndexView({collection: new StateCollection(dataManager.states)});
+               var stateIndexView = new StatesIndexView({collection: new StateCollection(dataManager.data.states)});
                this.$el.append(stateIndexView.render().el);
                this.subViews.push(stateIndexView);
             },
