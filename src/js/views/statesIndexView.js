@@ -11,6 +11,9 @@ define(
         initialize: function() {
             
         },
+        events: {
+            'click .backtointro': 'onBackClick'
+        },
         className: 'iapp-panel upcoming',
         template: templates['stateIndexView.html'],
         render: function(data) {
@@ -30,6 +33,9 @@ define(
                 _this.$('.stcont').append(indexEntryView.el);
             });
             return this;
+        },
+        onBackClick: function() {
+            Backbone.trigger('app:goBack');
         }
     });
 
