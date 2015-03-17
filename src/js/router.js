@@ -9,7 +9,7 @@ define([
             routes: {
                 "": "home",
                 
-                "video/:clip_name":                 "highlight",    // #/1
+                "lab/:lab_id":                 "highlight",    // #/1
 
             },
 
@@ -17,8 +17,8 @@ define([
                 Backbone.trigger("homeRoute");
             },
 
-            highlight: function(clip_name) {
-                Backbone.trigger("router:video", clip_name);
+            highlight: function(lab_id) {
+                Backbone.trigger("router:lab", lab_id);
             }
 
         });
