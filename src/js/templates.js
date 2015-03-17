@@ -26,7 +26,37 @@ this["templates"]["labView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '';
+__p += '<div class="page-wrap content">\n  <h1 class="page-header container"> \n    <img class="info" src="/img/info.svg" alt="info">\n    <img class="headimg vt" src="/img/virginiatech.svg" alt="Virginia">\n  </h1>\n\n  <img class="photo" src="/img/vtphoto.svg">\n  <figcaption class="photocred">(Photo: ' +
+((__t = ( photo_credit )) == null ? '' : __t) +
+')</figcaption>\n\n  <a class="link" href="https://www.ento.vt.edu/facilities/bsl-labs.html" target="_blank">\n    <p class="text labnm">' +
+((__t = ( name )) == null ? '' : __t) +
+'</p>\n  </a>\n  <p class="text chatt">' +
+((__t = ( city )) == null ? '' : __t) +
+', ' +
+((__t = ( state )) == null ? '' : __t) +
+'</p>\n  <div class="hr1"></div>\n  <p class="text chatt lab-body">' +
+((__t = ( description )) == null ? '' : __t) +
+'</p>\n\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
+((__t = ( byline )) == null ? '' : __t) +
+'</p> \n      <div class="document-button">\n          download incident documentation          \n      </div>\n    <div class="ftbutton">read story</div>\n    <div class="backtostate">\n      <div class="ftbutton">' +
+((__t = ( state )) == null ? '' : __t) +
+'</div>\n    </div>\n    <div class="ftbutton">share</div>\n  </div>\n</div>';
+
+}
+return __p
+};
+
+this["templates"]["stateEntry.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<p class="text labnm">' +
+((__t = ( name )) == null ? '' : __t) +
+'</p>\n    <p class="text labloc">' +
+((__t = ( city )) == null ? '' : __t) +
+' , ' +
+((__t = ( state )) == null ? '' : __t) +
+'</p>\n\n<div class="hr2"></div>';
 
 }
 return __p
@@ -44,20 +74,9 @@ return __p
 
 this["templates"]["stateView.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
-function print() { __p += __j.call(arguments, '') }
+var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n  <h1 class="page-header container"> \n    <img class="info" src="/img/info.svg" alt="info">\n    <img class="headimg" src="/img/virginia.svg" alt="Virginia">\n  </h1>\n\n  <p class="text chatt">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>\n  <div class="hr1"></div>\n';
- _.each(states, function(state){ ;
-__p += '\n\n\n\n  <a class="link" href="vatech.html">\n    <p class="text labnm">' +
-((__t = ( state.name )) == null ? '' : __t) +
-'</p>\n    <p class="text labloc">' +
-((__t = ( state.city )) == null ? '' : __t) +
-' , ' +
-((__t = ( state.state )) == null ? '' : __t) +
-'</p>\n  </a>\n<div class="hr2"></div>\n\n';
- }) ;
-__p += '\n\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <a href="viewyourstate.html">\n      <div class="ftbutton">states</div>\n    </a>\n    <div class="ftbutton">share</div>\n  </div>\n</div>';
+__p += '<div class="page-wrap content">\n  <h1 class="page-header container"> \n    <img class="info" src="/img/info.svg" alt="info">\n    <img class="headimg" src="/img/virginia.svg" alt="Virginia">\n  </h1>\n\n  <p class="text chatt">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>\n  <div class="hr1"></div>\n\n<div class="lablistcont"></div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="backtoindex">\n      <div class="ftbutton">States</div>\n    </div>\n    <div class="ftbutton">share</div>\n  </div>\n</div>';
 
 }
 return __p

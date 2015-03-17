@@ -8,13 +8,14 @@ define(
     'views/IntroView',
     'views/statesIndexView',
     'views/stateView',
+    'views/labView',
     'collections/StateCollection',
     'collections/LabCollection',
     'router',
     'models/config',
     'templates'
   ],
-  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, StateCollection, LabCollection, router, config, templates){
+  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, StateCollection, LabCollection, router, config, templates){
         return Backbone.View.extend({
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
@@ -22,6 +23,8 @@ define(
                 this.listenTo(Backbone, "app:goBack", this.goBack);
                 this.listenTo(Backbone, "set:state", this.onSetState);
                 this.listenTo(Backbone, "set:lab", this.onSetLab);
+                this.listenTo(Backbone, "router:lab", this.onLabRoute);
+
             },
             events: {
                 'click .intro-next-button': 'onNextClick',
@@ -65,6 +68,10 @@ define(
                 var stateView = new StateView();
                 this.$el.append(stateView.el);
                 this.subViews.push(stateView);
+
+                var labView = new LabView();
+                this.$el.append(labView.el);
+                this.subViews.push(labView);
             },
             currentSubView: 0,
             goForward: function() {
@@ -86,6 +93,18 @@ define(
 
                 oldSub.$el.removeClass('active').addClass('upcoming');
                 newSub.$el.removeClass('done').addClass('active');
+            },
+            goToSubView: function(viewNum) {
+                //advance 1 sub view
+                var oldSub = this.subViews[this.currentSubView];
+                previousSubView = this.currentSubView;
+                this.currentSubView = viewNum;
+                var newSub = this.subViews[this.currentSubView];
+
+                for (var i = previousSubView; i < viewNum; i++) {
+                    this.subViews[i].$el.removeClass('active').addClass('done');
+                }
+                newSub.$el.removeClass('upcoming').addClass('active');
             },
             getURL: function() {
                 //returns a string of the current root URL
@@ -110,7 +129,38 @@ define(
                 this.subViews[2].render();
                 this.goForward();
             },
+            onSetLab: function(labModel) {
+                 //store referene to current lab
+                this.currentLab = labModel;
+
+                //assign labModel to the lab sub view
+                this.subViews[3].model = labModel;
+
+                //render the lab subview
+                this.subViews[3].render();
+                this.goForward();
+
+                router.navigate('lab/' + labModel.get('lab_id'));
+
+            },
             currentState: null,
-            currentLab: null
+            currentLab: null,
+
+            onLabRoute: function(lab_id) {
+                var lab = this.labCollection.find(function(labModel) {
+                    return labModel.get("lab_id") == lab_id;
+                });
+
+                this.currentLab = lab;
+
+                this.subViews[3].model = lab;
+                //render the lab subview
+                this.subViews[3].render();
+
+                this.goToSubView(3);
+                console.log(this.currentLab);
+
+
+            },
         });
 });

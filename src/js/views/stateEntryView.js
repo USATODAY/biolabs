@@ -8,21 +8,20 @@ define(
   function(jQuery, _, Backbone, templates) {
     return Backbone.View.extend({
         initialize: function() {
-            
+            this.render();
         },
         events: {
-            'click .backtostate': 'onBackClick'
+            'click': 'onClick'
         },
-        className: 'iapp-panel upcoming',
-        template: templates['labView.html'],
-        render: function() {
-            console.log(this.model.toJSON());
+
+        template: templates["stateEntry.html"],
+        render: function(data) {
             
             this.$el.html(this.template(this.model.toJSON()));
             return this;
         },
-        onBackClick: function() {
-            Backbone.trigger('app:goBack');
+        onClick: function() {
+            Backbone.trigger('set:lab', this.model);
         }
     });
 

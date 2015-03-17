@@ -1,0 +1,29 @@
+<div class="page-wrap content">
+  <h1 class="page-header container"> 
+    <img class="info" src="/img/info.svg" alt="info">
+    <img class="headimg vt" src="/img/virginiatech.svg" alt="Virginia">
+  </h1>
+
+  <img class="photo" src="/img/vtphoto.svg">
+  <figcaption class="photocred">(Photo: <%= photo_credit %>)</figcaption>
+
+  <a class="link" href="https://www.ento.vt.edu/facilities/bsl-labs.html" target="_blank">
+    <p class="text labnm"><%= name %></p>
+  </a>
+  <p class="text chatt"><%= city %>, <%= state %></p>
+  <div class="hr1"></div>
+  <p class="text chatt lab-body"><%= description %></p>
+
+
+  <div class ="container foot">
+    <p class="byline"> by <%= byline %></p> 
+      <div class="document-button">
+          download incident documentation          
+      </div>
+    <div class="ftbutton">read story</div>
+    <div class="backtostate">
+      <div class="ftbutton"><%= state %></div>
+    </div>
+    <div class="ftbutton">share</div>
+  </div>
+</div>
