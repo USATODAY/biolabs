@@ -13,9 +13,9 @@ define(
         className: 'iapp-panel upcoming',
         template: templates['stateView.html'],
         render: function(data) {
-            console.log(this.collection);
+            console.log(this.collection.toJSON());
             
-            this.$el.html(this.template());
+            this.$el.html(this.template({states: this.collection.toJSON()}));
             return this;
         }
     });

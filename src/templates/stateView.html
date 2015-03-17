@@ -1,0 +1,29 @@
+<div class="page-wrap content">
+  <h1 class="page-header container"> 
+    <img class="info" src="/img/info.svg" alt="info">
+    <img class="headimg" src="/img/virginia.svg" alt="Virginia">
+  </h1>
+
+  <p class="text chatt">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+  <div class="hr1"></div>
+<% _.each(states, function(state){ %>
+
+
+
+  <a class="link" href="vatech.html">
+    <p class="text labnm"><%= state.name %></p>
+    <p class="text labloc"><%= state.city %> , <%= state.state %></p>
+  </a>
+<div class="hr2"></div>
+
+<% }) %>
+
+
+  <div class ="container foot"> 
+    <div class="ftbutton">read story</div>
+    <a href="viewyourstate.html">
+      <div class="ftbutton">states</div>
+    </a>
+    <div class="ftbutton">share</div>
+  </div>
+</div>
