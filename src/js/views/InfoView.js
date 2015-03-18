@@ -9,13 +9,12 @@ define(
     function(jQuery, _, Backbone, templates, Analytics) {
         return Backbone.View.extend({
             initialize: function() {
-                this.listenTo(this.model, "change", this.render);
-                this.listenTo(Backbone, "ShareShow", this.onShareShow);
+                this.listenTo(Backbone, "InfoShow", this.onInfoShow);
                 this.render();
             },
             render: function() {
                 
-                this.$el.html(this.template(this.model.toJSON()));
+                this.$el.html(this.template());
 
 
 
@@ -23,23 +22,16 @@ define(
             },
             events: {
                 'click .iapp-share-close': 'onClickClose',
-                'click .iapp-share-popup': 'onShareButtonClick'
             },
-            template: templates['share.html'],
+            template: templates['info.html'],
             className: 'iapp-share-panel iapp-panel upcoming',
-            onShareShow: function() {
+            onInfoShow: function() {
+                console.log('this works');
                 this.$el.removeClass('upcoming').addClass('active');
             },
             onClickClose: function() {
                 this.$el.addClass('upcoming').removeClass('active');
                 Backbone.trigger('share:close');
-            },
-            onShareButtonClick: function(e) {
-                Analytics.trackEvent('Social share button clicked');
-                e.preventDefault();
-                
-
-              this.windowPopup(e.currentTarget.href, 500, 300);
             },
             windowPopup: function(url, width, height) {
                 // Calculate the position of the popup so

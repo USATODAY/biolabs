@@ -11,7 +11,8 @@ define(
             
         },
         events: {
-            'click .intro-view-state-button': 'onViewStateClick'
+            'click .intro-view-state-button': 'onViewStateClick',
+            'click .share-button': 'onShareShow'
         },
         className: 'iapp-panel active',
         template: templates['intro.html'],
@@ -23,6 +24,9 @@ define(
         onViewStateClick: function() {
             console.log('click');
             Backbone.trigger('app:advance');
+        },
+        onShareShow: function() {
+            Backbone.trigger('ShareShow');
         }
     });
 

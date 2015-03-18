@@ -11,7 +11,8 @@ define(
             
         },
         events: {
-            'click .backtostate': 'onBackClick'
+            'click .backtostate': 'onBackClick',
+            'click .share-button': 'onShareShow'
         },
         className: 'iapp-panel upcoming',
         template: templates['labView.html'],
@@ -23,6 +24,9 @@ define(
         },
         onBackClick: function() {
             Backbone.trigger('app:goBack');
+        },
+        onShareShow: function() {
+            Backbone.trigger('ShareShow');
         }
     });
 

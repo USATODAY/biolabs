@@ -9,13 +9,16 @@ define(
     'views/statesIndexView',
     'views/stateView',
     'views/labView',
+    'views/shareView',
+    'views/InfoView',
     'collections/StateCollection',
     'collections/LabCollection',
     'router',
     'models/config',
+    'models/ShareModel',
     'templates'
   ],
-  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, StateCollection, LabCollection, router, config, templates){
+  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, ShareView, InfoView, StateCollection, LabCollection, router, config, ShareModel, templates){
         return Backbone.View.extend({
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
@@ -28,7 +31,8 @@ define(
             },
             events: {
                 'click .intro-next-button': 'onNextClick',
-                'click .iapp-usat-logo-image': 'onLogoClick'
+                'click .iapp-usat-logo-image': 'onLogoClick',
+                'click .info': 'onInfoShow'
             },
             onDataReady: function() {
                 this.render();
@@ -42,6 +46,9 @@ define(
             onNextClick: function() {
                 Analytics.trackEvent('Into next button click.');
                 Backbone.trigger("app:advance");
+            },
+            onInfoShow: function() {
+                Backbone.trigger('InfoShow');
             },
             render: function() {
                this.$el.append(this.template());
@@ -72,6 +79,14 @@ define(
                 var labView = new LabView();
                 this.$el.append(labView.el);
                 this.subViews.push(labView);
+
+                var shareView = new ShareView({
+                    model: new ShareModel()
+                });
+                this.$el.append(shareView.el);
+
+                var infoView = new InfoView();
+                this.$el.append(infoView.el);
             },
             currentSubView: 0,
             goForward: function() {
@@ -102,7 +117,7 @@ define(
                 var newSub = this.subViews[this.currentSubView];
 
                 for (var i = previousSubView; i < viewNum; i++) {
-                    this.subViews[i].$el.removeClass('active').addClass('done');
+                    this.subViews[i].$el.removeClass('active').removeClass('upcoming').addClass('done');
                 }
                 newSub.$el.removeClass('upcoming').addClass('active');
             },

@@ -20,7 +20,7 @@ define(
 
     return {
         isMobile: isMobile,
-        fb_app_id: fb_app_id,
+        facebook: staticInfo.facebook,
         staticInfo: staticInfo
     };
 });

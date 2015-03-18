@@ -1,18 +1,3 @@
-* {
-   -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
-   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
-    box-sizing:        border-box;   /* Everything else */
-}
-
-
-body, div, html, {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  height: 100%;
-}
 
 body {
   background-color: $extra-light-grey;
@@ -31,16 +16,62 @@ body {
   width: 80%;
 }
 
+article * {
+   -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+    box-sizing:        border-box;   /* Everything else */
+}
+
+
+body, div, html, {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body, article.asset {
+  bottom: 0;
+  font-family: "Futura Today Normal", Arial,sans-serif;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.iapp-wrap, .iapp-panel{
-    height: 100%;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
-.iapp-wrap {
-    position: relative;
+html, body, .transition-wrap,  article.padded-container, .non-article-content { height: 100% !important; }
+
+footer { display: none !important;}
+
+article {
+  height: 100% !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+div.non-article-content{
+  padding: 0;
+}
+
+ #overlay {
+  height: calc(100% - 40px);
+}
+
+section.contents {
+  height: calc(100% - 50px);
 }
