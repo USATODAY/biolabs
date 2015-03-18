@@ -169,8 +169,7 @@ module.exports = function(grunt) {
             "mobile_detect": "lib/mobile-detect",
             "d3": '../../bower_components/d3/d3',
             "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
-              // "api/ads": "api/ads",
-              "api/analytics": "lib/analytics"
+            "api/analytics": "lib/analytics"
           },
           "shim": {
             'backbone': {
@@ -223,7 +222,7 @@ module.exports = function(grunt) {
             "d3": '../../bower_components/d3/d3',
             "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
               // "api/ads": "api/ads",
-            "api/analytics": "api/analytics"
+            "api/analytics": "lib/analytics"
           },
           "shim": {
             'backbone': {
@@ -326,17 +325,17 @@ module.exports = function(grunt) {
       },
       upload1: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'js/main.js'
+          '/17200/experiments/usatoday/2015/03/biolabs/': 'js/main.js'
         }
       },
       upload2: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'style/project.css'
+          '/17200/experiments/usatoday/2015/03/biolabs/': 'style/project.css'
         }
       },
       upload3: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs-interactive/': 'data/*.json'
+          '/17200/experiments/usatoday/2015/03/biolabs/': 'data/*.json'
         }
       }
     },

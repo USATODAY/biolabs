@@ -5,6 +5,7 @@
 @import "card";
 @import "buttons";
 @import "panel";
+@import "share";
 
 // ---------- GENERAL ---------- //
 .text {
@@ -130,6 +131,10 @@
 	display: inline-block;
 }
 
+.infocont {
+
+}
+
 // ---------- IMAGES ----------- //
 
 img {
@@ -151,6 +156,8 @@ img {
 	margin: 0 .5em 0 0;
     position: absolute;
     display: inline-block;
+    z-index: 5;
+
 }
 
 .headimg {

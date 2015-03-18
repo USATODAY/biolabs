@@ -12,7 +12,8 @@ define(
             
         },
         events: {
-            'click .backtointro': 'onBackClick'
+            'click .backtointro': 'onBackClick',
+            'click .share-button': 'onShareShow'
         },
         className: 'iapp-panel upcoming',
         template: templates['stateIndexView.html'],
@@ -36,6 +37,9 @@ define(
         },
         onBackClick: function() {
             Backbone.trigger('app:goBack');
+        },
+        onShareShow: function() {
+            Backbone.trigger('ShareShow');
         }
     });
 
