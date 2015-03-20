@@ -1,0 +1,52 @@
+<div class="iapp-panel">
+    <div class="page-wrap index">
+      <h1 class="page-header container"> 
+          <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">
+      </h1>
+
+      <p class="text intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+      <div class="button intro-view-state-button">view your state</div>
+      <div class="button intro-read-story-button">read story</div>
+
+      <div class ="container foot"> 
+        <div class="ftbutton share-button"> share </div>
+      </div>
+    </div>
+</div>
+<div class="iapp-panel">
+    
+</div>
+
+<div class="'iapp-panel upcoming">
+    {% for lab in labs %}
+    <div class="page-wrap content">
+      <div class="main">
+        <h1 class="page-header container"> 
+          <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">
+          <div class="text header labhd">{{ lab.name }}</div>
+        </h1>
+
+        <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">
+        <figcaption class="photocred">(Photo: {{ lab.photo_credit }})</figcaption>
+
+        <a class="link" href="" target="_blank">
+          <p class="text labnm">{{ lab.name }}</p>
+        </a>
+        <p class="text chatt">{{ lab.city }}, {{ lab.state }}</p>
+        <div class="hr1"></div>
+        <p class="text chatt lab-body">{{ lab.description }}</p>
+      </div>
+
+      <div class ="container foot">
+        <p class="byline"> by {{ lab.byline }}</p> 
+          <div class="document-button">
+              download incident documentation          
+          </div>
+        <div class="ftbutton">read story</div>
+        <div class="ftbutton backtostate">{{ lab.state }}</div>
+        <div class="ftbutton share-button">share</div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
