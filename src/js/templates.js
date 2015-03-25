@@ -36,7 +36,7 @@ this["templates"]["labView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
+__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</div>\n    </h1>\n\n    <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
 ((__t = ( photo_credit )) == null ? '' : __t) +
@@ -106,7 +106,7 @@ this["templates"]["stateIndexView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header"> States </div>\n    </h1>\n    <div class="stcont"></div>\n    <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtointro">intro</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
+__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg stindexhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header"> States </div>\n    </h1>\n    <div class="stcont"></div>\n    <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtointro">intro</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
 
 }
 return __p
@@ -116,7 +116,7 @@ this["templates"]["stateView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header">' +
+__p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
 '</div>\n    </h1>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
 

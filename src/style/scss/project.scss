@@ -22,7 +22,7 @@
 		text-transform: none;
 		&.labhd {
 			font-size: 20px;
-			margin: 2em 0 0 0;
+			margin: 4em 0 0 0;
 			float: left;
 		}
 	}
@@ -173,18 +173,22 @@ img {
     z-index: 5;
     &:hover {
 		cursor: pointer;
-		transition: background-color .5s;
 	}
 
 }
 
 .headimg {
 	float: left;
-	display: inline;
+	display: inline-block;
 	width: 10%;
-	&.labhd {
-		margin: 1em 0 0 2em;
-		width: 5%;
+	&.stindexhd {
+		margin: -1em 0 0 3em;
+	}
+	&.sthd {
+		margin: -1em 0 0 1em;
+	}
+	&.lbhd {
+		margin: 1em 0 0 1em;
 	}
 }
 
@@ -277,10 +281,10 @@ img {
     margin: 0 1em 1em 1em;
     padding: 0.5em;
     text-transform: uppercase;
-    width: calc(100% - 2em);
+    width: calc(100% - 3em);
     &:hover {
 		cursor: pointer;
-		background-color: $medium-grey;
+		background-color: $dark-blue;
 		transition: background-color .5s;
 	}
     @media(max-width: 600px) {
