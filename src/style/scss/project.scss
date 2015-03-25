@@ -30,7 +30,7 @@
 	}
 	&.chatt {
 		margin: 2em 1em 1em 2em;
-		color: #a6a8ab;
+		color: #fff;
 		text-align: left;
 	}
     &.lab-body {
@@ -146,9 +146,12 @@ h1.container {
 }
 
 .stcont {
-	width: 80%;
+	width: 70%;
+	position: relative;
 	padding: 0 0 1em 1em;
-	display: inline-block;
+	display: block;
+	clear: both;
+	margin: 0 auto;
 }
 
 .entryinnerwrap {
@@ -254,13 +257,13 @@ img {
 
 .stbutton {
 	position: relative;
-	width: 50px;
-	height: 50px;
-	display: inline-block;
+	width: calc(20% - 2px);
+	height: 0;
+	float: left;
 	color: #404041;
 	text-align: center;
 	margin: 1px;
-	padding: 1em;
+	padding-bottom: 20%;
 	text-transform: uppercase;
 	transition: background-color .5s;
 	&.light {
