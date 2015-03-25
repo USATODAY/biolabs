@@ -40,9 +40,9 @@ __p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="pa
 ((__t = ( name )) == null ? '' : __t) +
 '</div>\n    </h1>\n\n    <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
 ((__t = ( photo_credit )) == null ? '' : __t) +
-')</figcaption>\n\n    <a class="link" href="" target="_blank">\n      <p class="text labnm">' +
+')</figcaption>\n    \n    <p class="text labnm2">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</p>\n    </a>\n    <p class="text chatt">' +
+'</p>\n   \n    <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
