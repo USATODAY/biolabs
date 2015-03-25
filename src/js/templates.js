@@ -118,7 +118,7 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n    </h1>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
+'</div>\n    </h1>\n    <p class="text chatt explain">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
 
 }
 return __p

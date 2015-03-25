@@ -32,6 +32,9 @@
 		margin: 2em 1em 1em 2em;
 		color: #fff;
 		text-align: left;
+		&.explain {
+			color: $light-grey;
+		}
 	}
     &.lab-body {
         margin-bottom: 200px;
