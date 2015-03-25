@@ -4,10 +4,6 @@ body {
   color: $dark-grey;
   font-family: "Futura Today", Arial,sans-serif;
   height: 100%;
-  @media(min-width: 600px) {
-    background: url(../img/bio_bg.jpg) no-repeat center center fixed;
-    background-size: cover;
-  }
 }
 
 .page-wrap {

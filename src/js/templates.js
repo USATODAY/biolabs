@@ -6,7 +6,7 @@ this["templates"]["app.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap"><img class="info" src="/img/info.svg" alt="info"></div>';
+__p += '<div class="page-wrap"><img class="info" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/info.svg" alt="info"></div>\n';
 
 }
 return __p
@@ -26,7 +26,7 @@ this["templates"]["intro.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap index">\n  <h1 class="page-header container"> \n      <img class="logo" src="/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n  </h1>\n\n  <p class="text intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>\n\n  <div class="button intro-view-state-button">view your state</div>\n  <div class="button intro-read-story-button">read story</div>\n\n  <div class ="container foot"> \n    <div class="ftbutton share-button"> share </div>\n  </div>\n</div>\n\n';
+__p += '<div class="page-wrap index">\n  <h1 class="page-header container"> \n      <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n  </h1>\n\n  <p class="text intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>\n\n  <div class="button intro-view-state-button">view your state</div>\n  <div class="button intro-read-story-button">read story</div>\n\n  <div class ="container foot"> \n    <div class="ftbutton share-button"> share </div>\n  </div>\n</div>\n\n';
 
 }
 return __p
@@ -36,9 +36,9 @@ this["templates"]["labView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="/img/locator.svg" alt="">\n      <div class="text header labhd">' +
+__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</div>\n    </h1>\n\n    <img class="photo" src="/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
+'</div>\n    </h1>\n\n    <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
 ((__t = ( photo_credit )) == null ? '' : __t) +
 ')</figcaption>\n\n    <a class="link" href="" target="_blank">\n      <p class="text labnm">' +
 ((__t = ( name )) == null ? '' : __t) +
@@ -52,7 +52,7 @@ __p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="pa
 ((__t = ( byline )) == null ? '' : __t) +
 '</p> \n      <div class="document-button">\n          download incident documentation          \n      </div>\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>';
+'</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
 
 }
 return __p
@@ -106,7 +106,7 @@ this["templates"]["stateIndexView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="/img/locator.svg" alt="">\n      <div class="text header"> States </div>\n    </h1>\n    <div class="stcont"></div>\n    <img class="range" src="/img/range.svg">\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtointro">intro</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
+__p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header"> States </div>\n    </h1>\n    <div class="stcont"></div>\n    <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtointro">intro</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
 
 }
 return __p
@@ -116,9 +116,9 @@ this["templates"]["stateView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="/img/locator.svg" alt="">\n      <div class="text header">' +
+__p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n    </h1>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>';
+'</div>\n    </h1>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
 
 }
 return __p
