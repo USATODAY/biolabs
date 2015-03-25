@@ -30,7 +30,7 @@ define(
             }
             return className;
         },
-        template: _.template('<%= abbreviation %>'),
+        template: _.template('<div class="entryinnerwrap"> <%= abbreviation %></div>'),
         render: function(data) {
             
             this.$el.html(this.template(this.model.toJSON()));
