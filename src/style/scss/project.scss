@@ -80,6 +80,13 @@
 // --------- CONTAINTERS -------- //
 .iapp-wrap {
     overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    @media(min-width: 600px) {
+        background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/bio_bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
 }
 
 
@@ -122,6 +129,10 @@
         position: fixed;
         max-width: 600px;
     	// max-height: 5em;
+    }
+
+    &h1 {
+        padding: 0;
     }
 }
 

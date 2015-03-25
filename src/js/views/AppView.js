@@ -68,7 +68,9 @@ define(
                 this.$el.append(introView.render(dataManager.data).el);
                 this.subViews.push(introView);
 
-                var stateIndexView = new StatesIndexView({collection: new StateCollection(dataManager.data.states)});
+                this.stateCollection = new StateCollection(dataManager.data.states);
+
+                var stateIndexView = new StatesIndexView({collection: this.stateCollection});
                 this.$el.append(stateIndexView.render().el);
                 this.subViews.push(stateIndexView);
 
@@ -126,22 +128,7 @@ define(
                 return 'http://' + window.location.hostname + window.location.pathname;
             },
             onSetState: function(stateModel) {
-                //store referene to current state
-                this.currentState = stateModel;
-                
-                //find lab models for this state
-                var labModels = this.labCollection.filter(function(lab){
-                    return lab.get('state') == stateModel.get('name');
-                });
-                //create new lab collection of the new state's labs
-                var stateLabCollection = new LabCollection(labModels);
-                console.log(stateLabCollection);
-
-                //assign stateModel to the state sub view
-                this.subViews[2].collection = stateLabCollection;
-
-                //render the state subview
-                this.subViews[2].render();
+                this.setCurrentState(stateModel);
                 this.goForward();
             },
             onSetLab: function(labModel) {
@@ -161,10 +148,36 @@ define(
             currentState: null,
             currentLab: null,
 
+            setCurrentState: function(stateModel) {
+                //store referene to current state
+                this.currentState = stateModel;
+                
+                //find lab models for this state
+                var labModels = this.labCollection.filter(function(lab){
+                    return lab.get('state') == stateModel.get('name');
+                });
+                //create new lab collection of the new state's labs
+                var stateLabCollection = new LabCollection(labModels);
+                console.log(stateLabCollection);
+
+                //assign stateModel to the state sub view
+                this.subViews[2].collection = stateLabCollection;
+
+                //render the state subview
+                this.subViews[2].render();
+            },
+
             onLabRoute: function(lab_id) {
                 var lab = this.labCollection.find(function(labModel) {
                     return labModel.get("lab_id") == lab_id;
                 });
+
+                var labState = lab.get('state');
+                stateModel = this.stateCollection.find(function(stateModel) {
+                    return stateModel.get('name') == labState;
+                });
+                
+                Backbone.trigger('set:state', stateModel);
 
                 this.currentLab = lab;
 

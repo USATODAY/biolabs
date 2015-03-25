@@ -12,7 +12,7 @@ define(
             init: function() {
 
                 //remove page header
-                $('header').fadeOut();
+                // $('header').fadeOut();
 
                 //Initialize main appView
                 var appView = new AppView({
