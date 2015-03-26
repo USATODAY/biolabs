@@ -38,17 +38,15 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</div>\n    </h1>\n\n    <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
-((__t = ( photo_credit )) == null ? '' : __t) +
-')</figcaption>\n    \n    <p class="text labnm2">' +
-((__t = ( name )) == null ? '' : __t) +
-'</p>\n   \n    <p class="text labloc">' +
+'</div>\n    </h1>\n   \n    <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n    <div class="hr1"></div>\n    <p class="text chatt lab-body">' +
+'</p>\n    <div class="hr1"></div>\n    <p class="text chatt">' +
 ((__t = ( description )) == null ? '' : __t) +
-'</p>\n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
+'</p>\n\n    \n      <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n      <div class="photocap">Photo caption will go here</div>\n      <div class="photocred">(Photo: ' +
+((__t = ( photo_credit )) == null ? '' : __t) +
+')</div>\n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
 ((__t = ( byline )) == null ? '' : __t) +
 '</p> \n      <div class="document-button">\n          download incident documentation          \n      </div>\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
 ((__t = ( state )) == null ? '' : __t) +
