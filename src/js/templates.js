@@ -88,9 +88,11 @@ this["templates"]["stateEntry.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<p class="text labnm">' +
+__p += '<p class="text lablevel">' +
+((__t = ( highest_bsl )) == null ? '' : __t) +
+'</p>\n<p class="text labnm">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</p>\n    <p class="text labloc">' +
+'</p>\n<p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ' , ' +
 ((__t = ( state )) == null ? '' : __t) +
