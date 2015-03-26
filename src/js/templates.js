@@ -34,21 +34,32 @@ return __p
 
 this["templates"]["labView.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</div>\n    </h1>\n   \n    <p class="text labloc">' +
+'</div>\n    </h1>\n  ';
+ if(photo_file !== "") { ;
+__p += '\n\n\n   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/' +
+((__t = ( photo_file )) == null ? '' : __t) +
+'">\n      <div class="photocred">(Photo: ' +
+((__t = ( photo_credit )) == null ? '' : __t) +
+')</div>\n\n   ';
+ } ;
+__p += '\n    <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
 '</p>\n    <div class="hr1"></div>\n    <p class="text chatt">' +
 ((__t = ( description )) == null ? '' : __t) +
-'</p>\n\n    \n      <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n      <div class="photocap">Photo caption will go here</div>\n      <div class="photocred">(Photo: ' +
-((__t = ( photo_credit )) == null ? '' : __t) +
-')</div>\n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
+'</p>\n\n    \n    <div class="photocap">Photo caption will go here</div>\n      \n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
 ((__t = ( byline )) == null ? '' : __t) +
-'</p> \n      <div class="document-button">\n          download incident documentation          \n      </div>\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
+'</p> \n    ';
+ if(docs_file !== "") { ;
+__p += '\n      <div class="document-button">\n          download incident documentation          \n      </div>\n    ';
+ } ;
+__p += '\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
 ((__t = ( state )) == null ? '' : __t) +
 '</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
 
