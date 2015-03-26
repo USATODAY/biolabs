@@ -53,7 +53,7 @@ __p += '\n    <p class="text labloc">' +
 ((__t = ( state )) == null ? '' : __t) +
 '</p>\n    <div class="hr1"></div>\n    <p class="text chatt">' +
 ((__t = ( description )) == null ? '' : __t) +
-'</p>\n\n    \n    <div class="photocap">Photo caption will go here</div>\n      \n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
+'</p>\n\n    \n    <div class="photocap">Photo caption: will go here</div>\n      \n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
 ((__t = ( byline )) == null ? '' : __t) +
 '</p> \n    ';
  if(docs_file !== "") { ;
