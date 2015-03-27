@@ -26,7 +26,7 @@ this["templates"]["intro.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap index">\n  <h1 class="page-header container"> \n      <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n  </h1>\n\n  <p class="text intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>\n\n  <div class="button intro-view-state-button">view your state</div>\n  <div class="button intro-read-story-button">read story</div>\n\n  <div class ="container foot"> \n    <div class="ftbutton share-button"> share </div>\n  </div>\n</div>\n\n';
+__p += '<div class="page-wrap index">\n  <h1 class="page-header container"> \n      <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n  </h1>\n\n  <p class="text intro"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>\n\n  <div class="button intro-view-state-button">view your state</div>\n  <div class="button intro-read-story-button">read story</div>\n\n  <div class ="container foot"> \n    <div class="ftbutton share-button"> share </div>\n  </div>\n</div>\n\n';
 
 }
 return __p
@@ -34,23 +34,32 @@ return __p
 
 this["templates"]["labView.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<div class="page-wrap content">\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</div>\n    </h1>\n\n    <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/vtphoto.svg">\n    <figcaption class="photocred">(Photo: ' +
+'</div>\n    </h1>\n  ';
+ if(photo_file !== "") { ;
+__p += '\n\n\n   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/' +
+((__t = ( photo_file )) == null ? '' : __t) +
+'">\n      <div class="photocred">(Photo: ' +
 ((__t = ( photo_credit )) == null ? '' : __t) +
-')</figcaption>\n    \n    <p class="text labnm2">' +
-((__t = ( name )) == null ? '' : __t) +
-'</p>\n   \n    <p class="text labloc">' +
+')</div>\n\n   ';
+ } ;
+__p += '\n    <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n    <div class="hr1"></div>\n    <p class="text chatt lab-body">' +
+'</p>\n    <div class="hr1"></div>\n    <p class="text chatt">' +
 ((__t = ( description )) == null ? '' : __t) +
-'</p>\n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
+'</p>\n\n    \n    <div class="photocap">Photo caption: will go here</div>\n      \n  </div>\n\n  <div class ="container foot">\n    <p class="byline"> by ' +
 ((__t = ( byline )) == null ? '' : __t) +
-'</p> \n      <div class="document-button">\n          download incident documentation          \n      </div>\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
+'</p> \n    ';
+ if(docs_file !== "") { ;
+__p += '\n      <div class="document-button">\n          download incident documentation          \n      </div>\n    ';
+ } ;
+__p += '\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
 ((__t = ( state )) == null ? '' : __t) +
 '</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n</div>\n';
 
@@ -90,9 +99,11 @@ this["templates"]["stateEntry.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<p class="text labnm">' +
+__p += '<p class="text lablevel">' +
+((__t = ( highest_bsl )) == null ? '' : __t) +
+'</p>\n<p class="text labnm">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</p>\n    <p class="text labloc">' +
+'</p>\n<p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ' , ' +
 ((__t = ( state )) == null ? '' : __t) +
@@ -118,7 +129,7 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="page-wrap content">\n\n  <div class="main">\n    <h1 class="page-header container"> \n      <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n    </h1>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
+'</div>\n    </h1>\n    <p class="text chatt explain">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>\n    <div class="hr1"></div>\n    <div class="lablistcont"></div>\n  </div>\n\n  <div class ="container foot"> \n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtoindex">States</div>\n    <div class="ftbutton share-button">share</div>\n  </div>\n\n</div>\n';
 
 }
 return __p
