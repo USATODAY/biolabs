@@ -4,10 +4,10 @@
       <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">
       <div class="text header labhd"><%= name %></div>
     </h1>
-  <% if(photo_file !== "") { %>
+  <% if(photo !== "") { %>
 
 
-   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/<%= photo_file %>">
+   <img class="photo" src="../img/<%= lab_id %>.jpg">
       <div class="photocred">(Photo: <%= photo_credit %>)</div>
 
    <% } %>
@@ -23,9 +23,11 @@
   <div class ="container foot">
     <p class="byline"> by <%= byline %></p> 
     <% if(docs_file !== "") { %>
-      <div class="document-button">
+      <a class="link" href="https://www.documentcloud.org/documents/1690083-ak02.html">
+        <div class="document-button">
           download incident documentation          
-      </div>
+        </div>
+      </a>
     <% } %>
     <div class="ftbutton">read story</div>
     <div class="ftbutton backtostate"><%= state %></div>
