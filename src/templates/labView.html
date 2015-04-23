@@ -15,18 +15,18 @@
     <div class="hr1"></div>
     <p class="text chatt"><%= description %></p>
 
-    
-    <div class="photocap">Photo caption: will go here</div>
-      
+    <% if(photo !== "") { %>
+        <div class="photocap">Photo caption: will go here</div>
+     <% } %>
   </div>
 
   <div class ="container foot">
     <p class="byline"> by <%= byline %></p> 
     <% if(docs_file !== "") { %>
-      <a class="link" href="https://www.documentcloud.org/documents/1690083-ak02.html">
-        <div class="document-button">
-          download incident documentation          
-        </div>
+      <a class="link" href="https://www.documentcloud.org/documents/1690083-ak02.html" target="_blank">
+          <div class="document-button">
+          DOWNLOAD SAFETY, ACCIDENT RECORDS
+          </div>
       </a>
     <% } %>
     <div class="ftbutton">read story</div>
