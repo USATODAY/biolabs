@@ -98,7 +98,7 @@
     height: 100%;
     width: 100%;
     @media(min-width: 600px) {
-        background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/bio_bg.jpg) no-repeat center center fixed;
+        background: #404041;
         background-size: cover;
     }
 }
@@ -129,6 +129,7 @@
 .main {
 	overflow-y: auto;
 	height: 100%;
+	padding-bottom: 80px;
 }
 
 h1.container {
@@ -144,8 +145,10 @@ h1.container {
     &.foot {
     	bottom: 0;
     	padding: .3em 0 .3em 0;
-        position: fixed;
+        position: absolute;
         max-width: 600px;
+        left: 0;
+        
     	// max-height: 5em;
     }
 }
@@ -220,6 +223,7 @@ img {
 
 .photo {
 	margin: 0 1em 0 2em;
+	width: calc(100% - 4em);
 }
 
 .photocred {
@@ -307,7 +311,7 @@ img {
     margin: 0 1em 1em 1em;
     padding: 0.5em;
     text-transform: uppercase;
-    width: calc(100% - 3em);
+    width: calc(100% - 2em);
     &:hover {
 		cursor: pointer;
 		background-color: $dark-blue;
