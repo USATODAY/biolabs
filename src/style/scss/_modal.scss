@@ -1,0 +1,16 @@
+.iapp-modal {
+    background-color: white;
+    border-radius: 5px;
+    color: $dark-grey;
+    min-height: 300px;
+    left: 50%;
+    padding: 1em;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+
+    &.upcoming {
+        top: 200%;
+    }
+}

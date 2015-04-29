@@ -26,11 +26,18 @@ define(
             jQuery.getJSON(dataURL, function(data) {        
                 _this.data.labs = data;
 
+                _.each(_this.data.labs, function(lab) {
+                    lab.description = _this.splitParagraphs(lab.description);
+                });
+
 
                 _this.generateStates();
 
                 // trigger the dataReady Backbone even which kicks off the app 
                 Backbone.trigger("dataReady", this);
+                var desc = data[0].description;
+                // var test = _this.splitParagraphs(desc);
+                console.log(desc);
 
             });
         },
@@ -47,6 +54,10 @@ define(
                 
                 return stateObj;
             });
+        },
+
+        splitParagraphs: function(string) {
+            return string.split(/\n+/g); 
         },
         userName: ''
     };

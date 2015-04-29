@@ -12,7 +12,7 @@ define(
         },
         events: {
             'click .intro-view-state-button': 'onViewStateClick',
-            'click .share-button': 'onShareShow'
+            'click .share-button': 'onShareShow',
         },
         className: 'iapp-panel active',
         template: templates['intro.html'],
@@ -27,6 +27,9 @@ define(
         },
         onShareShow: function() {
             Backbone.trigger('ShareShow');
+        },
+        onCreditsShow: function() {
+            Backbone.trigger('CreditsShow');
         }
     });
 

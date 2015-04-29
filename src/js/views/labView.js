@@ -12,7 +12,8 @@ define(
         },
         events: {
             'click .backtostate': 'onBackClick',
-            'click .share-button': 'onShareShow'
+            'click .share-button': 'onShareShow',
+            'click .lablevel': 'onLevelClick'
         },
         className: 'iapp-panel upcoming',
         template: templates['labView.html'],
@@ -27,6 +28,9 @@ define(
         },
         onShareShow: function() {
             Backbone.trigger('ShareShow');
+        },
+        onLevelClick: function() {
+            Backbone.trigger("ModalShow");
         }
     });
 

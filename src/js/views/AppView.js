@@ -9,8 +9,10 @@ define(
     'views/statesIndexView',
     'views/stateView',
     'views/labView',
+    'views/modalView',
     'views/shareView',
     'views/InfoView',
+    'views/CreditsView',
     'collections/StateCollection',
     'collections/LabCollection',
     'router',
@@ -18,7 +20,7 @@ define(
     'models/ShareModel',
     'templates'
   ],
-  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, ShareView, InfoView, StateCollection, LabCollection, router, config, ShareModel, templates){
+  function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, ModalView, ShareView, InfoView, CreditView, StateCollection, LabCollection, router, config, ShareModel, templates){
         return Backbone.View.extend({
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
@@ -32,6 +34,7 @@ define(
             events: {
                 'click .intro-next-button': 'onNextClick',
                 'click .iapp-usat-logo-image': 'onLogoClick',
+                'click .credits-button': 'onCreditsShow',
                 'click .info': 'onInfoShow'
             },
             onDataReady: function() {
@@ -89,6 +92,12 @@ define(
 
                 var infoView = new InfoView();
                 this.$el.append(infoView.el);
+                
+                var creditView = new CreditView();
+                this.$el.append(creditView.el);
+
+                var modalView = new ModalView();
+                this.$el.append(modalView.el);
             },
             currentSubView: 0,
             goForward: function() {
@@ -190,5 +199,9 @@ define(
 
 
             },
+            onCreditsShow: function() {
+                Backbone.trigger('CreditsShow');
+            }
+
         });
 });
