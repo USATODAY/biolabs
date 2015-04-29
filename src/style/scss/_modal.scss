@@ -2,15 +2,27 @@
     background-color: white;
     border-radius: 5px;
     color: $dark-grey;
+    max-width: 90%;
     min-height: 300px;
     left: 50%;
-    padding: 1em;
+    padding: 2.5em;
     position: fixed;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 400px;
 
     &.upcoming {
         top: 200%;
+    }
+}
+
+.iapp-modal-close {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    img {
+        width: 100%;
     }
 }

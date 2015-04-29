@@ -16,7 +16,7 @@ this["templates"]["credits.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n\n<div class="page-wrap iapp-content-wrap">\n    \n    <h2 class="iapp-share-intro iapp-panel-text-main">Contributors</h2>\n    <p><strong>Reporting:</strong> Alison Young, Nick Penzenstadler, Catherine Sheffo, Mark Hannan, USA TODAY; Paul Giblin, The Arizona Republic; Liv Osby, (Asheville, N.C.) Citizen-Times; Jessie Balmert, Newspaper Network of Central Ohio; Jason Clayworth, The Des Moines Register; Shari Rudavsky, The Indianapolis Star; Emily Le Coz, The (Jackson, Miss.) Clarion-Ledger; Russ Walker, KING5 Seattle; Justin A. Hinkley, Lansing State Journal; Tom Wilemon, The (Nashville) Tennessean; Brett Kelman, The (Palm Springs, Calif.) Desert Sun; Jim Goodman, Rochester Democrat & Chronicle; Jeff Montgomery, The (Wilmington, Del.) News Journal</p>\n    <p><strong>Editing:</strong> John Hillkirk, John Kelly, Terry Byrne, Evan Eile</p>\n    <p><strong>Design and presentation:</strong> Mitchell Thorson, Jerry Mosemak, Madeleine Deason</p>\n</div>\n';
+__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n\n<div class="page-wrap iapp-content-wrap">\n    \n    <h2 class="iapp-share-intro iapp-panel-text-main">Contributors</h2>\n    <p><strong>Reporting:</strong> Alison Young, Nick Penzenstadler, Catherine Sheffo, Mark Hannan, USA TODAY; Paul Giblin, The Arizona Republic; Liv Osby, (Asheville, N.C.) Citizen-Times; Jessie Balmert, Newspaper Network of Central Ohio; Jason Clayworth, The Des Moines Register; Shari Rudavsky, The Indianapolis Star; Emily Le Coz, The (Jackson, Miss.) Clarion-Ledger; Russ Walker, KING5 Seattle; Justin A. Hinkley, Lansing State Journal; Tom Wilemon, The (Nashville) Tennessean; Brett Kelman, The (Palm Springs, Calif.) Desert Sun; Jim Goodman, Rochester Democrat & Chronicle; Jeff Montgomery, The (Wilmington, Del.) News Journal</p>\n    <p><strong>Editing:</strong> John Hillkirk, John Kelly, Terry Byrne, Evan Eile, Kelly Jordan</p>\n    <p><strong>Design and presentation:</strong> Mitchell Thorson, Jerry Mosemak, Madeleine Deason</p>\n</div>\n';
 
 }
 return __p
@@ -36,7 +36,7 @@ this["templates"]["intro.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap index">\n    <div class="main">\n        <h1 class="page-header container"> \n            <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n        </h1>\n\n        <p class="text intro">Hundreds of “high-containment” laboratories across the United States work with dangerous bacteria, viruses and toxins that require special biosafety level 3 and 4 precautions to prevent their release. But because of fragmented oversight, nobody knows where all the labs are, the Government Accountability Office has told Congress. A USA TODAY investigation has located more than 150 BSL-3 and BSL-4 facilities, describes their research and provides details of safety records that some labs fought to keep secret.</p>\n\n        <div class="button intro-view-state-button">view your state</div>\n        <div class="button intro-read-story-button">read story</div>\n    </div>\n    <div class ="container foot"> \n        <div class="ftbutton share-button"> share </div>\n        <div class="ftbutton credits-button"> contributors </div>\n    </div>\n</div>\n\n';
+__p += '<div class="page-wrap index">\n    <div class="main">\n        <h1 class="page-header container"> \n            <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n        </h1>\n\n        <p class="text intro">Hundreds of “high-containment” labs across the U.S. work with dangerous bacteria, viruses and toxins that require special precautions to prevent their release. But because of fragmented oversight, nobody knows where all the labs are, including the federal government. A USA TODAY investigation has located about 200 biosafety level 3 and 4 lab facilities, describes their research and gives you safety records that some labs fought to keep secret.</p>\n\n        <div class="button intro-view-state-button">view your state</div>\n        <div class="button intro-read-story-button">read story</div>\n    </div>\n    <div class ="container foot"> \n        <div class="ftbutton share-button"> share </div>\n        <div class="ftbutton credits-button"> contributors </div>\n    </div>\n</div>\n\n';
 
 }
 return __p
@@ -57,11 +57,13 @@ __p += '\n\n\n   <img class="photo" src="http://www.gannett-cdn.com/experiments/
 ((__t = ( photo_credit )) == null ? '' : __t) +
 ')</div>\n\n   ';
  } ;
-__p += '\n    <p class="text labloc">' +
+__p += '\n   <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n    <div class="hr1"></div>\n    <div class="text chatt">\n        ';
+'</p>\n   <div class="lablevel-button">' +
+((__t = ( highest_bsl )) == null ? '' : __t) +
+'</div>\n    <div class="hr1"></div>\n    <div class="text chatt">\n        ';
  _.each(description, function(description_paragraph) { ;
 __p += '\n        \n        <p class="">' +
 ((__t = ( description_paragraph )) == null ? '' : __t) +
@@ -93,7 +95,7 @@ this["templates"]["modal.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-modal-close">x</div>\n<p class="modal-text">' +
+__p += '<div class="iapp-modal-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/close-icon.svg" alt="close" /></div>\n<p class="modal-text">' +
 ((__t = ( text )) == null ? '' : __t) +
 '</p>\n';
 
@@ -105,9 +107,7 @@ this["templates"]["share.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n\n<div class="page-wrap iapp-content-wrap">\n    \n    <h2 class="iapp-share-intro iapp-panel-text-main">Your turn. Continue this conversation by sharing this video.</h2>\n    \n    <p class="iapp-share-preview">' +
-((__t = (share_language)) == null ? '' : __t) +
-'</p>\n\n<div class="iapp-share-buttons">\n    <a href="https://twitter.com/intent/tweet?url=' +
+__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n\n<div class="page-wrap iapp-content-wrap">\n    \n    <h2 class="iapp-share-intro iapp-panel-text-main">Share this interactive</h2>\n    \n\n<div class="iapp-share-buttons">\n    <a href="https://twitter.com/intent/tweet?url=' +
 ((__t = (twitterShare)) == null ? '' : __t) +
 '&text=' +
 ((__t = (encodedShare)) == null ? '' : __t) +
@@ -123,7 +123,7 @@ __p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannet
 ((__t = (fb_redirect)) == null ? '' : __t) +
 '" class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/fb.svg" alt="Facebook share"></a>\n    <a href="' +
 ((__t = (email_link)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/email.svg" alt="Email share"></a>\n</div>\n</div>';
+'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/email.svg" alt="Email share"></a>\n</div>\n</div>\n';
 
 }
 return __p

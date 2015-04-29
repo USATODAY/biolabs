@@ -13,7 +13,7 @@ define(
         events: {
             'click .backtostate': 'onBackClick',
             'click .share-button': 'onShareShow',
-            'click .lablevel': 'onLevelClick'
+            'click .lablevel-button': 'onLevelClick'
         },
         className: 'iapp-panel upcoming',
         template: templates['labView.html'],

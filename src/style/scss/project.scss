@@ -50,8 +50,8 @@
 		margin: 0 2em 0 0;
 		float: right;
 		color: #a6a8ab;
-        border: solid 1px;
-        padding: 0.25em;
+        // border: solid 1px;
+        // padding: 0.25em;
 	}
 	&.labnm {
 		margin: 0 1em 0 2em;
@@ -72,6 +72,21 @@
 
 .link {
 	text-decoration: none;
+}
+
+.lablevel-button {
+    border: solid 1px #a6a8ab;
+    color: #a6a8ab;
+    cursor: pointer;
+    margin-left: 2em;
+    margin-top: 1em;
+    transition: all 250ms ease;
+    width: 5em;
+
+    &:hover {
+        // border: solid 1px $bio-red;
+        // color: $bio-red;
+    }
 }
 
 .byline {
