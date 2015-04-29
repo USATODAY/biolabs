@@ -1,9 +1,17 @@
 .iapp-share-panel {
-    background-color: rgba(50, 50, 50, 0.8);
+    background-color: rgba(25, 25, 25, 0.9);
     color: white;
     filter: none;
+    overflow-y: auto;
     padding: 2em;
     z-index: 18;
+    .page-wrap {
+        overflow: visible;
+    }
+    p {
+        margin-bottom: 1em;
+        text-align: left;
+    }
 }
 
 .iapp-share-close {
@@ -14,7 +22,7 @@
 }
 
 .iapp-share-button {
-    display: block;
+    display: inline-block;
     margin: 1em auto 0 auto;
     width: 60px;
     img {
@@ -24,6 +32,7 @@
 
 .iapp-share-preview {
     font-family: "Futura Today Light", Arial,sans-serif;
+    text-align: center;
 }
 
 .iapp-share-buttons {

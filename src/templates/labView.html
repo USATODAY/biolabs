@@ -7,30 +7,37 @@
   <% if(photo !== "") { %>
 
 
-   <img class="photo" src="../img/<%= lab_id %>.jpg">
+   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/tmp/<%= photo %>">
       <div class="photocred">(Photo: <%= photo_credit %>)</div>
 
    <% } %>
-    <p class="text labloc"><%= city %>, <%= state %></p>
+   <p class="text labloc"><%= city %>, <%= state %></p>
+   <div class="lablevel-button"><%= highest_bsl %></div>
     <div class="hr1"></div>
-    <p class="text chatt"><%= description %></p>
+    <div class="text chatt">
+        <% _.each(description, function(description_paragraph) { %>
+        
+        <p class=""><%= description_paragraph %></p>
 
-    
-    <div class="photocap">Photo caption: will go here</div>
-      
+        <% }) %>
+    </div>
+    <% if(photo !== "") { %>
+       <div class="photocap"><%= photo_cutline %></div>
+     <% } %>
   </div>
 
   <div class ="container foot">
     <p class="byline"> by <%= byline %></p> 
     <% if(docs_file !== "") { %>
-      <a class="link" href="https://www.documentcloud.org/documents/1690083-ak02.html">
-        <div class="document-button">
-          download incident documentation          
-        </div>
+          <a class="link" href="<%=docs_file%>" target="_blank">
+          <div class="document-button">
+          DOWNLOAD SAFETY, ACCIDENT RECORDS
+          </div>
       </a>
     <% } %>
     <div class="ftbutton">read story</div>
     <div class="ftbutton backtostate"><%= state %></div>
     <div class="ftbutton share-button">share</div>
+    <div class="ftbutton credits-button"> contributors </div>
   </div>
 </div>
