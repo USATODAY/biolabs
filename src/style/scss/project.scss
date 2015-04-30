@@ -11,7 +11,7 @@
 // ---------- GENERAL ---------- //
 .text {
 	&.intro {
-		margin: 2em 2em 1em 2em;
+		margin: 2em 0 1em 0;
 	}
 	&.header {
 		margin: 1em 0 10px 0;
@@ -30,8 +30,8 @@
 		}
 	}
 	&.chatt {
-		margin: 2em 1em 1em 2em;
 		color: #fff;
+        margin: 1em 0;
 		text-align: left;
 		&.explain {
 			color: $light-grey;
@@ -42,7 +42,8 @@
         }
 	}
     &.labloc {
-		margin: 0 0 0 2em;
+		// margin: 0 0 0 2em;
+        font-size: 16px;
 		text-align: left;
 		color: #a6a8ab;
 	}
@@ -54,7 +55,7 @@
         // padding: 0.25em;
 	}
 	&.labnm {
-		margin: 0 1em 0 2em;
+		margin: 0 1em 0 0;
 		color: #fff;
 		text-align: left;
 		&:hover {
@@ -78,8 +79,7 @@
     border: solid 1px #a6a8ab;
     color: #a6a8ab;
     cursor: pointer;
-    margin-left: 2em;
-    margin-top: 1em;
+    margin: 0.5em 2em;
     transition: all 250ms ease;
     width: 5em;
 
@@ -98,7 +98,7 @@
 }
 
 .hr1 {
-	margin: 1em 1em 1em 2em;
+	margin: 1em 0;
 	background:  #a6a8ab;
 	height: 3px;
 	border: 0.8px solid;
@@ -106,7 +106,7 @@
 }
 
 .hr2 {
-	margin: 1em 1em 1em 2em;
+	margin: 1em 0;
 	background:  #fff;
 	height: 1px;
 	opacity: 0.4;
@@ -115,6 +115,7 @@
 
 // --------- CONTAINTERS -------- //
 .iapp-wrap {
+    background-color: #404041;
     overflow: hidden;
     position: relative;
     height: 100%;
@@ -127,10 +128,10 @@
 
 
 .page-wrap {
-	overflow: hidden;
+	// overflow: hidden;
 	text-align: center;
 	padding: 0;
-    height: calc(100% - 40px);
+    // height: calc(100% - 40px);
 	max-width: 600px;
 	font-family: "Futura Today Light", Arial, sans-serif;
     position: relative;
@@ -148,10 +149,13 @@
     }
 }
 
+.intro-panel .main {
+    padding: 0;
+    min-height: 100%;
+}
+
 .main {
-	overflow-y: auto;
-	height: 100%;
-	padding-bottom: 80px;
+    padding: 1em;
 }
 
 h1.container {
@@ -164,12 +168,18 @@ h1.container {
     margin: 0 auto;
     padding: 0 0 0 0;
     background-color: #404041;
+    @extend .group;
     &.foot {
     	bottom: 0;
-    	padding: .3em 0 .3em 0;
+        max-width: 600px;
+    	padding: 1em;
         position: absolute;
+        text-align: center;
         width: 100%;
-        left: 0;
+        left: 10%;
+        @media (min-width: 750px) {
+            left: calc(50% - 300px);
+        }
         
     	// max-height: 5em;
     }
@@ -178,10 +188,11 @@ h1.container {
 .stcont {
 	width: 70%;
 	position: relative;
-	padding: 0 0 1em 1em;
+	padding-bottom: 1em; 
 	display: block;
 	clear: both;
 	margin: 0 auto;
+    @extend .group;
 }
 
 .entryinnerwrap {
@@ -227,13 +238,13 @@ img {
 	display: inline-block;
 	width: 10%;
 	&.stindexhd {
-		margin: -1em 0 0 3em;
+		margin: -1em 0 0 0;
 	}
 	&.sthd {
-		margin: -1em 0 0 1em;
+		margin: -1em 0 0 0;
 	}
 	&.lbhd {
-		margin: .5em 0 0 1em;
+		margin: .5em 0 0 0;
 	}
 }
 
@@ -247,8 +258,7 @@ img {
 }
 
 .photo {
-	margin: 0 1em 0 2em;
-	width: calc(100% - 4em);
+	width: 100%;
 }
 
 .photocred {
@@ -259,11 +269,11 @@ img {
 }
 
 .photocap {
-	margin: 0 0 0 3em;
+	// margin: 0 0 0 3em;
 	font-size: 12px;
 	color: #a6a8ab;
 	float: left;
-	margin-bottom: 100px;
+	// margin-bottom: 100px;
 }
 
 // ---------- BUTTONS ---------- //

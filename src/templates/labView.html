@@ -1,9 +1,12 @@
+<div class="iapp-panel-inner-wrap">
 <div class="page-wrap content">
   <div class="main">
-    <h1 class="page-header container"> 
+    <div class="page-header container"> 
       <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">
-      <div class="text header labhd"><%= name %></div>
-    </h1>
+      <h1 class="text header labhd"><%= name %></h1>
+       <p class="text labloc"><%= city %>, <%= state %></p>
+    </div>
+   <div class="lablevel-button"><%= highest_bsl %></div>
   <% if(photo !== "") { %>
 
 
@@ -11,8 +14,6 @@
       <div class="photocred">(Photo: <%= photo_credit %>)</div>
 
    <% } %>
-   <p class="text labloc"><%= city %>, <%= state %></p>
-   <div class="lablevel-button"><%= highest_bsl %></div>
     <div class="hr1"></div>
     <div class="text chatt">
         <% _.each(description, function(description_paragraph) { %>
@@ -22,11 +23,14 @@
         <% }) %>
     </div>
     <% if(photo !== "") { %>
-       <div class="photocap"><%= photo_cutline %></div>
+    <div class="photocap"><strong>Photo: </strong><%= photo_cutline %></div>
      <% } %>
   </div>
 
-  <div class ="container foot">
+  
+</div>
+</div>
+<div class ="container foot">
     <p class="byline"> by <%= byline %></p> 
     <% if(docs_file !== "") { %>
           <a class="link" href="<%=docs_file%>" target="_blank">
@@ -39,5 +43,5 @@
     <div class="ftbutton backtostate"><%= state %></div>
     <div class="ftbutton share-button">share</div>
     <div class="ftbutton credits-button"> contributors </div>
-  </div>
 </div>
+

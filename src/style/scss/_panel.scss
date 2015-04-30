@@ -24,3 +24,9 @@
     @include panel();
 }
 
+.iapp-panel-inner-wrap {
+    @include panel();
+    overflow-y: auto;
+    padding-bottom: 200px;
+}
+

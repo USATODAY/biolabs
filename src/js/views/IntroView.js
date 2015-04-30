@@ -14,7 +14,7 @@ define(
             'click .intro-view-state-button': 'onViewStateClick',
             'click .share-button': 'onShareShow',
         },
-        className: 'iapp-panel active',
+        className: 'iapp-panel active intro-panel',
         template: templates['intro.html'],
         render: function(data) {
             
