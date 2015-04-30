@@ -47,13 +47,13 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n<div class="page-wrap content">\n  <div class="main">\n    <div class="page-header container"> \n      <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n      <h1 class="text header labhd">' +
+__p += '<div class="iapp-panel-inner-wrap">\n<div class="page-wrap content">\n  <div class="main">\n    <div class="page-header container"> \n        <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n        <div class="page-header-info-wrap">\n          <h2 class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h1>\n       <p class="text labloc">' +
+'</h2>\n          <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ', ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n    </div>\n   <div class="lablevel-button">' +
+'</p>\n        </div>\n    </div>\n   <div class="lablevel-button">' +
 ((__t = ( highest_bsl )) == null ? '' : __t) +
 '</div>\n  ';
  if(photo !== "") { ;

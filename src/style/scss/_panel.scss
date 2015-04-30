@@ -22,11 +22,12 @@
 
 .iapp-panel {
     @include panel();
+    // margin-bottom: 200px;
 }
 
 .iapp-panel-inner-wrap {
     @include panel();
     overflow-y: auto;
-    padding-bottom: 200px;
+    // padding-bottom: 200px;
 }
 
