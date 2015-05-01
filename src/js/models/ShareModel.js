@@ -19,10 +19,6 @@ define(
             'fb_id': '',
             'fb_redirect': 'http://' + window.location.hostname + '/pages/interactives/fb-share/',
             'email_link': ''
-
- 
-
-            
         },
 
         initialize: function() {
@@ -35,41 +31,29 @@ define(
                 'encodedShare': encodeURIComponent(this.get('default_share_language')),
                 'fb_id': config.facebook.app_id,
                 'email_link': this.createEmailLink(baseURL)
-                
             }); 
-
            this.listenTo(Backbone, "set:lab", this.onSetLab);
-          
-           
+           this.listenTo(Backbone, "unset:lab", this.onUnSetLab);
         },
-
         createFbShareURL: function(url) {   
             url = url.replace('#', '%23');
             return encodeURI(url); 
         },
-
         createTwitterShareURL: function(url) {
-
             return encodeURIComponent(url); 
         },
-
         createEmailLink: function(url) {
             return "mailto:?body=" + encodeURIComponent(this.get('sharelanguage')) +  "%0d%0d" + this.createTwitterShareURL(url) + "&subject=";
         },
-
         updateLanguage: function(newShareStr) {
             this.set({
                 'sharelanguage': newShareStr,
                 'encodedShare': encodeURIComponent(newShareStr)
             });
-
-
         },
-
         updateUrls: function() {
             var shareUrl;
             var baseURL = this.get('baseURL');
-            
             this.updateLanguage(this.get('default_share_language'));
             shareUrl = baseURL;
 
@@ -84,15 +68,15 @@ define(
                 'twitterShare': this.createTwitterShareURL(shareUrl),
                 'email_link': this.createEmailLink(shareUrl)
             });
-
         },
-
         onSetLab: function(labModel) {
             var lab_id = labModel.get("lab_id");
             this.set({lab_id: lab_id});
-
             this.updateUrls();
-
+        },
+        onUnSetLab: function() {
+            this.set({lab_id: null});
+            this.updateUrls();
         }
 
         

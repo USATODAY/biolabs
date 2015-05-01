@@ -3,9 +3,10 @@ define(
     'jquery',
     'underscore',
     'backbone',
+    'router',
     'templates'
   ],
-  function(jQuery, _, Backbone, templates) {
+  function(jQuery, _, Backbone, router, templates) {
     return Backbone.View.extend({
         initialize: function() {
             
@@ -18,12 +19,12 @@ define(
         className: 'iapp-panel upcoming',
         template: templates['labView.html'],
         render: function() {
-            console.log(this.model.toJSON());
-            
             this.$el.html(this.template(this.model.toJSON()));
             return this;
         },
         onBackClick: function() {
+            router.navigate('/_');
+            Backbone.trigger("unset:lab");
             Backbone.trigger('app:goBack');
         },
         onShareShow: function() {
