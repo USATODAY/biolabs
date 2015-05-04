@@ -13,6 +13,7 @@ define(
         },
         events: {
             'click .backtostate': 'onBackClick',
+            'click .iapp-back-button': 'onBackClick',
             'click .share-button': 'onShareShow',
             'click .lablevel-button': 'onLevelClick'
         },

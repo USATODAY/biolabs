@@ -13,6 +13,7 @@ define(
         },
         events: {
             'click .backtoindex': 'onBackClick',
+            'click .iapp-back-button': 'onBackClick',
             'click .share-button': 'onShareShow'
         },
         className: 'iapp-panel upcoming',

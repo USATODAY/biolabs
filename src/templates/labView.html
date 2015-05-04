@@ -1,6 +1,7 @@
 <div class="iapp-panel-inner-wrap">
 <div class="page-wrap content">
-  <div class="main">
+    <div class="main">
+    <div class="iapp-back-button ftbutton">Back</div>
     <div class="page-header container"> 
         <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">
         <div class="page-header-info-wrap">
@@ -17,6 +18,7 @@
 
    <% } %>
     <div class="hr1"></div>
+    <p class="byline"> by <%= byline %></p> 
     <div class="text chatt">
         <% _.each(description, function(description_paragraph) { %>
         
@@ -33,7 +35,6 @@
 </div>
 </div>
 <div class ="container foot">
-    <p class="byline"> by <%= byline %></p> 
     <% if(docs_file !== "") { %>
           <a class="link" href="<%=docs_file%>" target="_blank">
           <div class="document-button">

@@ -24,7 +24,7 @@
 		text-align: left;
 		&.labhd {
 			font-size: 20px;
-			margin: 2em 0 5px 0;
+			margin: 0 0 5px 0;
 			// float: left;
 			width: 80%;
 		}
@@ -91,7 +91,7 @@
 
 .byline {
 	font-size: 10px;
-	margin: 1em 3em 1em 3em;
+	margin: 1em 0;
 	color: #fff;
 	text-align: left;
 	text-transform: uppercase;
@@ -162,6 +162,10 @@
 .page-header-info-wrap {
     float: left;
     width: 90%;
+}
+
+.page-header.container {
+    margin-top: 2em;
 }
 
 h1.container {
@@ -242,15 +246,16 @@ img {
 .headimg {
 	float: left;
 	display: inline-block;
+    margin-top: -1em;
 	width: 10%;
 	&.stindexhd {
-		margin: -1em 0 0 0;
+		// margin: -1em 0 0 0;
 	}
 	&.sthd {
-		margin: -1em 0 0 0;
+		// margin: -1em 0 0 0;
 	}
 	&.lbhd {
-		margin: .5em 0 0 0;
+		// margin: 0 0 0 0;
 	}
 }
 
@@ -291,6 +296,13 @@ img {
 	display: inline-block;
 	margin: 0 0 1em 0;
 	padding: 0.7em;
+}
+
+.iapp-back-button {
+    font-size: 0.8em;
+    left: 0;
+    position: absolute;
+    top: 10px;
 }
 
 .ftbutton {
