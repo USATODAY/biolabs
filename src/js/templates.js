@@ -57,7 +57,7 @@ __p += '<div class="iapp-panel-inner-wrap">\n<div class="page-wrap content">\n  
 ((__t = ( highest_bsl )) == null ? '' : __t) +
 '</div>\n  ';
  if(photo !== "") { ;
-__p += '\n\n\n   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/tmp/' +
+__p += '\n\n\n   <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/labs/' +
 ((__t = ( photo )) == null ? '' : __t) +
 '">\n      <div class="photocred">(Photo: ' +
 ((__t = ( photo_credit )) == null ? '' : __t) +

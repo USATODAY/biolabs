@@ -6,6 +6,7 @@
 
       <p class="text intro">Hundreds of “high-containment” labs across the U.S. work with dangerous bacteria, viruses and toxins that require special precautions to prevent their release. But because of fragmented oversight, nobody knows where all the labs are, including the federal government. A USA TODAY investigation has located about 200 biosafety level 3 and 4 lab facilities, describes their research and gives you safety records that some labs fought to keep secret.</p>
 
+
       <div class="button intro-view-state-button">view your state</div>
       <div class="button intro-read-story-button">read story</div>
 
@@ -31,7 +32,7 @@
         </div>
         <div class="lablevel-button">{{ lab.highest_bsl }}<div>
         {% if not lab.photo_credit == "" %}
-        <img class="photo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/tmp/{{ lab.photo }}">
+        <!-- <img class="photo" src="http://www.gannett&#45;cdn.com/experiments/usatoday/2015/03/biolabs/img/labs/{{ lab.photo }}"> -->
             <figcaption class="photocred">(Photo: {{ lab.photo_credit }})</figcaption>
         {% endif %}
 
