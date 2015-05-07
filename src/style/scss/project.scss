@@ -151,7 +151,12 @@
 
 .intro-panel .main {
     padding: 0;
+    padding-bottom: 70px;
     min-height: 100%;
+}
+
+.intro-panel .container.foot {
+    position: absolute;
 }
 
 .main {
@@ -166,6 +171,9 @@
 
 .page-header.container {
     margin-top: 2em;
+    @media(max-heigh: 650px) {
+        max-height: 8em;
+    }
 }
 
 h1.container {
@@ -186,7 +194,7 @@ h1.container {
         position: absolute;
         text-align: center;
         width: 100%;
-        left: 10%;
+        left: 0;
         @media (min-width: 750px) {
             left: calc(50% - 300px);
         }
@@ -223,6 +231,10 @@ img {
 	// top: -2em;
 	overflow: visible;
 	max-width: 16em;
+
+    @media(max-height: 650px) {
+        max-width: 14em;
+    }
 }
 
 .info {
