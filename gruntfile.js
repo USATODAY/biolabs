@@ -191,17 +191,60 @@ module.exports = function(grunt) {
       },
       deploy: {
         options: {
-          "modules": [{
-            "name": "main",
-            "exclude": [
-              "jquery",
-              "underscore",
-              "backbone",
-              "api/analytics"
-            ]
-          }],
+          "name": "main",
+          "exclude": [
+            "jquery",
+            "underscore",
+            "backbone",
+            "api/analytics"
+          ],
           "baseUrl": "<%=config.src%>js",
-          "dir": "<%=config.build%>js",
+          "out": "<%=config.build%>js/main.js",
+          // "generateSourceMaps": true,
+          "preserveLicenseComments": false,
+          // "optimize": "none",
+          "optimize": "uglify2",
+          "useStrict": true,
+          "uglify2": {
+            "beautify": true,
+            "toplevel": true
+          },
+          "paths": {
+            "jquery": '../../bower_components/jquery/dist/jquery',
+            "backbone": '../../bower_components/backbone/backbone',
+            "underscore": '../../bower_components/underscore/underscore',
+            "jquery_ui": "lib/jquery-ui.min",
+            "jquery_ui_touch_punch": "lib/jquery.ui.touch-punch.min",
+            "analytics": "lib/analytics",
+            "mobile_detect": "lib/mobile-detect",
+            "d3": '../../bower_components/d3/d3',
+            "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
+              // "api/ads": "api/ads",
+            "api/analytics": "lib/analytics"
+          },
+          "shim": {
+            'backbone': {
+              "deps": ['underscore', 'jquery'],
+              "exports": 'Backbone'
+            },
+            'underscore': {
+              "exports": '_'
+            },
+            "jquery_ui_touch_punch": {
+              "deps": [
+                "jquery",
+                "jquery_ui"
+              ],
+              "exports": "jQuery"
+            }
+          }
+        }
+      },
+      embed: {
+        options: {
+          "name": "main",
+          "baseUrl": "<%=config.src%>js",
+          "out": "<%=config.build%>js/main-embed.js",
           // "generateSourceMaps": true,
           "preserveLicenseComments": false,
           // "optimize": "none",
@@ -251,7 +294,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%=config.src%>',
-            src: ['*.html'],
+            src: ['**/*.html'],
             dest: '<%=config.build%>',
             filter: 'isFile'
           },
@@ -302,7 +345,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%=config.build%>',
-            src: ['js/main.js'],
+            src: ['js/*.js'],
             dest: '',
             filter: 'isFile'
           },
@@ -310,6 +353,13 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%=config.build%>',
             src: ['style/project.css'],
+            dest: '',
+            filter: 'isFile'
+          },
+          {
+            expand: true,
+            cwd: '<%=config.build%>',
+            src: ['html/embed.html'],
             dest: '',
             filter: 'isFile'
           }
@@ -328,6 +378,11 @@ module.exports = function(grunt) {
           '/17200/experiments/usatoday/2015/03/biolabs/': 'js/main.js'
         }
       },
+      upload4: {
+        files: {
+          '/17200/experiments/usatoday/2015/03/biolabs/': 'js/main-embed.js'
+        }
+      },
       upload2: {
         files: {
           '/17200/experiments/usatoday/2015/03/biolabs/': 'style/project.css'
@@ -337,6 +392,11 @@ module.exports = function(grunt) {
         files: {
           '/17200/experiments/usatoday/2015/03/biolabs/': 'data/*.json'
         }
+      },
+      upload5: {
+        files: {
+          '/17200/experiments/usatoday/2015/03/biolabs/': 'html/embed.html'
+        }
       }
     },
 
@@ -345,7 +405,7 @@ module.exports = function(grunt) {
     clean: {
       dev: ['<%=config.build%>'],
       tmp: ['<%=config.tmp%>'],
-      deploy:  ['js', 'style', 'data']
+      deploy:  ['js', 'style', 'data', 'html']
     }
 
   });
@@ -367,6 +427,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'clean:tmp', 'browserSync:dev', 'watch']);
   grunt.registerTask('test', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'copy:test', 'clean:tmp', 'browserSync:test', 'watch']);
-  grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:deploy', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
-  grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'clean:deploy']);
+  grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:deploy', 'requirejs:embed', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
+  grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'ftp:upload4', 'ftp:upload5', 'clean:deploy']);
 };

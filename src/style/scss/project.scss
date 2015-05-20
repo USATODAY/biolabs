@@ -392,3 +392,23 @@ img {
     max-width: 600px;
     padding: 1em;
 }
+
+/******
+
+Embed specific styles
+
+******/
+
+.embed {
+    .read-story {
+        display: none;
+    }
+
+    .document-button {
+        display: inline-block;
+    }
+
+    .share-button {
+        display: none;
+    }
+}

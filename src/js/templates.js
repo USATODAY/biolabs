@@ -83,7 +83,7 @@ __p += '\n          <a class="link" href="' +
 ((__t = (docs_file)) == null ? '' : __t) +
 '" target="_blank">\n          <div class="document-button">\n          DOWNLOAD SAFETY, ACCIDENT RECORDS\n          </div>\n      </a>\n    ';
  } ;
-__p += '\n    <div class="ftbutton">read story</div>\n    <div class="ftbutton backtostate">' +
+__p += '\n    <div class="ftbutton read-story">read story</div>\n    <div class="ftbutton backtostate">' +
 ((__t = ( state )) == null ? '' : __t) +
 '</div>\n    <div class="ftbutton share-button">share</div>\n    <div class="ftbutton credits-button"> contributors </div>\n</div>\n\n';
 
@@ -151,7 +151,7 @@ this["templates"]["stateIndexView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n      <div class="main">\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg stindexhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header"> States </div>\n        </h1>\n        <div class="stcont"></div>\n        <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n      </div>\n    </div>\n</div>\n      <div class ="container foot"> \n        <div class="ftbutton">read story</div>\n        <div class="ftbutton backtointro">intro</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n';
+__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n      <div class="main">\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg stindexhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header"> States </div>\n        </h1>\n        <div class="stcont"></div>\n        <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n      </div>\n    </div>\n</div>\n      <div class ="container foot"> \n        <div class="ftbutton read-story">read story</div>\n        <div class="ftbutton backtointro">intro</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n';
 
 }
 return __p
@@ -163,7 +163,7 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n\n      <div class="main">\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n        </h1>\n        <p class="text chatt explain">Facilities that include BSL-3 or BSL-4 labs identified by USA TODAY’s research. Additional “high-containment” labs may also exist in this state.</p>\n        <div class="hr1"></div>\n        <div class="lablistcont"></div>\n      </div>\n\n  </div>\n\n</div>\n<div class ="container foot"> \n        <div class="ftbutton">read story</div>\n        <div class="ftbutton backtoindex">States</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n\n';
+'</div>\n        </h1>\n        <p class="text chatt explain">Facilities that include BSL-3 or BSL-4 labs identified by USA TODAY’s research. Additional “high-containment” labs may also exist in this state.</p>\n        <div class="hr1"></div>\n        <div class="lablistcont"></div>\n      </div>\n\n  </div>\n\n</div>\n<div class ="container foot"> \n        <div class="ftbutton read-story">read story</div>\n        <div class="ftbutton backtoindex">States</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n\n';
 
 }
 return __p

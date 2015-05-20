@@ -31,6 +31,16 @@ define(
                         $('.iapp-wrap').addClass('tablet');
                     }
                 }
+
+
+                if (this.isInIframe()) {
+                    $('header').hide();
+                    $('.iapp-wrap').addClass('embed');
+                }
+            },
+            isInIframe: function() {
+                var blnIsInFrame = window != window.parent;
+                return window != window.parent;
             }
         };
     });
