@@ -10,7 +10,7 @@ define(
     return Backbone.Model.extend( {
         defaults: {
             'default_share_language': 'Explore biolabs that work with dangerous pathogens; see mistakes, near misses and safety violations #USAbiolabs',
-            'stillimage': 'http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/fb-post.jpg',
+            'stillimage': 'http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/fb-post.jpg',
             'lab_id': null,
             'fbShare': '',
             'twitterShare': '',
