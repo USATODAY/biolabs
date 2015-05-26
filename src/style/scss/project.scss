@@ -12,10 +12,12 @@
 // ---------- GENERAL ---------- //
 .text {
 	&.intro {
-        font-size: 1.2em;
+        font-size: 1.5em;
 		margin: 2em auto 1em auto;
+        max-width: 600px;
         width: 90%;
         @media(max-width: 600px) {
+            font-size: 1em;
             margin: 0.5em auto;
         }
 	}
@@ -37,7 +39,8 @@
 	}
 	&.chatt {
 		color: #fff;
-        margin: 1em 0;
+        margin: 1em auto;
+        max-width: 560px;
 		text-align: left;
 		&.explain {
 			color: $light-grey;
@@ -171,6 +174,10 @@
         background: none;
         color: white;
     }
+
+    .text.intro {
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
 }
 
 .intro-panel .container.foot {
@@ -289,6 +296,9 @@ img {
 	&.lbhd {
 		// margin: 0 0 0 0;
 	}
+    @media (min-width: 600px) {
+        margin-top: -20px;
+    }
 }
 
 .range {
@@ -389,6 +399,11 @@ img {
 		background-color: $blue;
 		transition: background-color .5s;
 	}
+
+    @media(min-width: 800px) {
+        max-width: 70px;
+        padding-bottom: 70px;
+    }
 }
 
 .document-button {
@@ -414,6 +429,10 @@ img {
     margin: 0 auto;
     max-width: 600px;
     padding: 1em;
+}
+
+.iapp-clickable {
+    cursor: pointer;
 }
 
 /******

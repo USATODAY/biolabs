@@ -140,13 +140,13 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<p class="text lablevel">' +
 ((__t = ( highest_bsl )) == null ? '' : __t) +
-'</p>\n<p class="text labnm">' +
-((__t = ( name )) == null ? '' : __t) +
 '</p>\n<p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ' , ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n\n<div class="hr2"></div>';
+'</p>\n<p class="text labnm">' +
+((__t = ( name )) == null ? '' : __t) +
+'</p>\n\n<div class="hr2"></div>\n';
 
 }
 return __p
