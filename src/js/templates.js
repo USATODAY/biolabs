@@ -6,7 +6,7 @@ this["templates"]["app.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="page-wrap">\n    <div class="info ftbutton">About this project</div>\n</div>\n';
+__p += '<div class="page-wrap">\n</div>\n';
 
 }
 return __p
@@ -34,9 +34,16 @@ return __p
 
 this["templates"]["intro.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap index">\n        <div class="main">\n            <h1 class="page-header container"> \n                <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n            </h1>\n\n            <p class="text intro">Hundreds of “high-containment” labs across the U.S. work with dangerous bacteria, viruses and toxins that require special precautions to prevent their release. But because of fragmented oversight, nobody knows where all the labs are, including the federal government. A USA TODAY investigation has located about 200 biosafety level 3 and 4 lab facilities, describes their research and gives you safety records that some labs fought to keep secret.</p>\n\n            <div class="button intro-view-state-button">view your state</div>\n            <div class="button intro-read-story-button">read story</div>\n        </div>\n         <div class ="container foot"> \n            <div class="ftbutton share-button"> share </div>\n            <div class="ftbutton credits-button"> contributors </div>\n        </div>\n    </div>\n</div>\n\n';
+__p += '<div class="iapp-panel-inner-wrap">\n    <div class="info ftbutton">About this project</div>\n    <div class="page-wrap index">\n        <div class="main">\n            <h1 class="page-header container"> \n                <img class="logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biologo.svg" alt="BIOLABS IN YOUR BACKYARD">\n            </h1>\n\n            <p class="text intro">Hundreds of “high-containment” labs across the U.S. work with dangerous bacteria, viruses and toxins that require special precautions to prevent their release.</p>\n\n            <div class="button intro-view-state-button">view your state</div>\n        </div>\n         <div class ="container foot"> \n            <div class="ftbutton read-story">read story</div>\n            <div class="ftbutton share-button"> share </div>\n            <div class="ftbutton credits-button"> contributors </div>\n        </div>\n    </div>\n</div>\n';
+ if (! isMobile) { ;
+__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/biolabs_intro_still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/video/intro.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/video/intro.ogv" type="video/ogg" />\n</video>\n';
+ } else { ;
+__p += '\n<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/intro.gif" alt="">\n';
+ } ;
+__p += '\n\n<div class="iapp-intro-video-overlay"></div>\n\n';
 
 }
 return __p
@@ -47,7 +54,7 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n<div class="page-wrap content">\n    <div class="main">\n    <div class="iapp-back-button ftbutton">Back</div>\n    <div class="page-header container"> \n        <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n        <div class="page-header-info-wrap">\n          <h2 class="text header labhd">' +
+__p += '<div class="iapp-panel-inner-wrap">\n<div class="page-wrap content">\n    <div class="main">\n    <div class="info ftbutton">About this project</div>\n    <div class="iapp-back-button ftbutton">Back</div>\n    <div class="page-header container"> \n        <img class="headimg lbhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n        <div class="page-header-info-wrap">\n          <h2 class="text header labhd">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n          <p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
@@ -83,9 +90,7 @@ __p += '\n          <a class="link" href="' +
 ((__t = (docs_file)) == null ? '' : __t) +
 '" target="_blank">\n          <div class="document-button">\n          DOWNLOAD SAFETY, ACCIDENT RECORDS\n          </div>\n      </a>\n    ';
  } ;
-__p += '\n    <div class="ftbutton read-story">read story</div>\n    <div class="ftbutton backtostate">' +
-((__t = ( state )) == null ? '' : __t) +
-'</div>\n    <div class="ftbutton share-button">share</div>\n    <div class="ftbutton credits-button"> contributors </div>\n</div>\n\n';
+__p += '\n    <div class="ftbutton ">read story</div>\n    <div class="ftbutton share-button">share</div>\n    <div class="ftbutton credits-button"> contributors </div>\n</div>\n\n';
 
 }
 return __p
@@ -135,13 +140,13 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<p class="text lablevel">' +
 ((__t = ( highest_bsl )) == null ? '' : __t) +
-'</p>\n<p class="text labnm">' +
-((__t = ( name )) == null ? '' : __t) +
 '</p>\n<p class="text labloc">' +
 ((__t = ( city )) == null ? '' : __t) +
 ' , ' +
 ((__t = ( state )) == null ? '' : __t) +
-'</p>\n\n<div class="hr2"></div>';
+'</p>\n<p class="text labnm">' +
+((__t = ( name )) == null ? '' : __t) +
+'</p>\n\n<div class="hr2"></div>\n';
 
 }
 return __p
@@ -151,7 +156,7 @@ this["templates"]["stateIndexView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n      <div class="main">\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg stindexhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header"> States </div>\n        </h1>\n        <div class="stcont"></div>\n        <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n      </div>\n    </div>\n</div>\n      <div class ="container foot"> \n        <div class="ftbutton read-story">read story</div>\n        <div class="ftbutton backtointro">intro</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n';
+__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n      <div class="main">\n        <div class="info ftbutton">About this project</div>\n        <div class="iapp-back-button ftbutton">Back</div>\n        <div class="page-header container"> \n          <img class="headimg stindexhd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header">Choose Your State</div>\n        </div>\n          <p class="text chatt explain">But because of fragmented oversight, nobody knows where all the labs are, including the federal government. A USA TODAY investigation has located about 200 biosafety level 3 and 4 lab facilities, describes their research and gives you safety records that some labs fought to keep secret.</p>\n        <div class="stcont"></div>\n        <img class="range" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/range.svg">\n      </div>\n    </div>\n</div>\n      <div class ="container foot"> \n        <div class="ftbutton ">read story</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n';
 
 }
 return __p
@@ -161,9 +166,9 @@ this["templates"]["stateView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n\n      <div class="main">\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header">' +
+__p += '<div class="iapp-panel-inner-wrap">\n    <div class="page-wrap content">\n\n      <div class="main">\n        <div class="info ftbutton">About this project</div>\n        <div class="iapp-back-button ftbutton">Back</div>\n        <h1 class="page-header container"> \n          <img class="headimg sthd" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/img/locator.svg" alt="">\n          <div class="text header">' +
 ((__t = ( state )) == null ? '' : __t) +
-'</div>\n        </h1>\n        <p class="text chatt explain">Facilities that include BSL-3 or BSL-4 labs identified by USA TODAY’s research. Additional “high-containment” labs may also exist in this state.</p>\n        <div class="hr1"></div>\n        <div class="lablistcont"></div>\n      </div>\n\n  </div>\n\n</div>\n<div class ="container foot"> \n        <div class="ftbutton read-story">read story</div>\n        <div class="ftbutton backtoindex">States</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n\n';
+'</div>\n        </h1>\n        <p class="text chatt explain">Facilities that include BSL-3 or BSL-4 labs identified by USA TODAY’s research. Additional “high-containment” labs may also exist in this state.</p>\n        <div class="hr1"></div>\n        <div class="lablistcont"></div>\n      </div>\n\n  </div>\n\n</div>\n<div class ="container foot"> \n        <div class="ftbutton ">read story</div>\n        <div class="ftbutton share-button">share</div>\n        <div class="ftbutton credits-button"> contributors </div>\n      </div>\n\n\n';
 
 }
 return __p
