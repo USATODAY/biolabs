@@ -37,6 +37,10 @@ define(
                     $('header').hide();
                     $('.iapp-wrap').addClass('embed');
                 }
+
+                $(window).on("resize", function(e) {
+                    Backbone.trigger("window:resize");
+                });
             },
             isInIframe: function() {
                 var blnIsInFrame = window != window.parent;
