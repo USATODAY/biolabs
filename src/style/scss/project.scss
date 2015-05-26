@@ -40,10 +40,10 @@
 	&.chatt {
 		color: #fff;
         margin: 1em auto;
-        max-width: 560px;
 		text-align: left;
 		&.explain {
 			color: $light-grey;
+            max-width: 560px;
 		}
 
         p {
@@ -142,7 +142,7 @@
 	text-align: center;
 	padding: 0;
     // height: calc(100% - 40px);
-	max-width: 800px;
+	max-width: 700px;
 	font-family: "Futura Today Light", Arial, sans-serif;
     position: relative;
 	&.index {
@@ -215,7 +215,7 @@ h1.container {
     @extend .group;
     &.foot {
     	bottom: 0;
-        max-width: 800px;
+        max-width: 700px;
     	padding: 1em;
         position: absolute;
         text-align: center;
@@ -223,7 +223,7 @@ h1.container {
         left: 0;
         z-index: 3;
         @media (min-width: 750px) {
-            left: calc(50% - 400px);
+            left: calc(50% - 350px);
         }
         
     	// max-height: 5em;
