@@ -23,6 +23,8 @@ define(
   function(jQuery, _, Backbone, dataManager, Analytics, IntroView, StatesIndexView, StateView, LabView, ModalView, ShareView, InfoView, CreditView, StateCollection, LabCollection, router, config, ShareModel, templates){
         return Backbone.View.extend({
             initialize: function() {
+                //clear out cached lab info
+                this.$el.empty();
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
                 this.listenTo(Backbone, "app:advance", this.goForward);
                 this.listenTo(Backbone, "app:goBack", this.goBack);
