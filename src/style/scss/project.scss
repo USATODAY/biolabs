@@ -146,11 +146,9 @@
 	font-family: "Futura Today Light", Arial, sans-serif;
     position: relative;
 	&.index {
-		background: url(/img/bg1.svg) no-repeat 50% 70%;
 		background-color: #fff;
 	}
 	&.content {
-		background: url(/img/bg2.svg) no-repeat 50% 50%;
 		background-color: #404041;
         @extend .group;
 	}
