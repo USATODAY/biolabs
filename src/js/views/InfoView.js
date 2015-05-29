@@ -26,7 +26,6 @@ define(
             template: templates['info.html'],
             className: 'iapp-share-panel iapp-panel upcoming',
             onInfoShow: function() {
-                console.log('this works');
                 this.$el.removeClass('upcoming').addClass('active');
             },
             onClickClose: function() {

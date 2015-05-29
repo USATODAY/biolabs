@@ -24,7 +24,6 @@ define(
             return this;
         },
         onViewStateClick: function() {
-            console.log('click');
             Backbone.trigger('app:advance');
         },
         onShareShow: function() {

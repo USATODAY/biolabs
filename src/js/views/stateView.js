@@ -19,7 +19,6 @@ define(
         className: 'iapp-panel upcoming',
         template: templates['stateView.html'],
         render: function(data) {
-            console.log(this.collection.toJSON());
             var name = this.collection.models[0].get("state");
             
             this.$el.html(this.template({states: this.collection.toJSON(), state: name}));

@@ -41,7 +41,6 @@ define(
             },
             onDataReady: function() {
                 this.render();
-                console.log(dataManager.data);
                 Backbone.history.start();
                 _.delay(function() {
                     this.$('.iapp-preloader').fadeOut(250);
@@ -67,7 +66,6 @@ define(
                 
                 //first, create master lab collection
                 this.labCollection = new LabCollection(dataManager.data.labs);
-                console.log(this.labCollection);
 
                 var introView = new IntroView();
                 this.$el.append(introView.render(dataManager.data).el);
@@ -115,7 +113,6 @@ define(
             goBack: function() {
                 //goes back 1 sub view
                 var oldSub = this.subViews[this.currentSubView];
-                console.log("back");
                 this.currentSubView--;
                 var newSub = this.subViews[this.currentSubView];
 
@@ -169,7 +166,6 @@ define(
                 });
                 //create new lab collection of the new state's labs
                 var stateLabCollection = new LabCollection(labModels);
-                console.log(stateLabCollection);
 
                 //assign stateModel to the state sub view
                 this.subViews[2].collection = stateLabCollection;
@@ -197,7 +193,6 @@ define(
                 this.subViews[3].render();
 
                 this.goToSubView(3);
-                console.log(this.currentLab);
 
 
             },

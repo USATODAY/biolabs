@@ -36,7 +36,6 @@ define(
                 Backbone.trigger("dataReady", this);
                 var desc = data[0].description;
                 // var test = _this.splitParagraphs(desc);
-                console.log(desc);
 
             });
         },
