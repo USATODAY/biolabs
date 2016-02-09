@@ -40,7 +40,11 @@ define(
 
                 $(window).on("resize", function(e) {
                     Backbone.trigger("window:resize");
+                    var height = $('.container').height();
+                    parent.postMessage({height: height}, '*');
                 });
+
+                $(window).trigger('resize');
             },
             isInIframe: function() {
                 var blnIsInFrame = window != window.parent;

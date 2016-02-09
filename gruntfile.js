@@ -375,27 +375,27 @@ module.exports = function(grunt) {
       },
       upload1: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs/': 'js/main.js'
+          '/17200/experiments/usatoday/2015/03/biolabs-embed/': 'js/main.js'
         }
       },
       upload4: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs/': 'js/main-embed.js'
+          '/17200/experiments/usatoday/2015/03/biolabs-embed/': 'js/main-embed.js'
         }
       },
       upload2: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs/': 'style/project.css'
+          '/17200/experiments/usatoday/2015/03/biolabs-embed/': 'style/project.css'
         }
       },
       upload3: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs/': 'data/*.json'
+          '/17200/experiments/usatoday/2015/03/biolabs-embed/': 'data/*.json'
         }
       },
       upload5: {
         files: {
-          '/17200/experiments/usatoday/2015/03/biolabs/': 'html/embed.html'
+          '/17200/experiments/usatoday/2015/03/biolabs-embed/': 'html/embed.html'
         }
       }
     },
