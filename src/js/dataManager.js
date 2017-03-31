@@ -12,10 +12,8 @@ define(
 
     if ((hostname == "localhost" || hostname == "10.0.2.2")) {
         dataURL = 'data/data.json';
-    } else if (hostname == "www.gannett-cdn.com") {
-        dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/data/data.json";
     } else {
-        dataURL = "http://" + hostname + "/services/webproxy/?url=http://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/data/data.json";
+        dataURL = "https://www.gannett-cdn.com/experiments/usatoday/2015/03/biolabs/data/data.json";
     }
 
     return {

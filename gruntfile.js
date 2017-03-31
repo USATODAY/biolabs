@@ -2,7 +2,8 @@ var fs = require('fs');
 var osenv = require('osenv');
 var home = osenv.home();
 
-var secrets = JSON.parse(fs.readFileSync(home + '/.secrets/secrets.json', 'utf8'));
+// uncomment to enable deployment
+// var secrets = JSON.parse(fs.readFileSync(home + '/.secrets/secrets.json', 'utf8'));
 
 module.exports = function(grunt) {
 
@@ -369,9 +370,10 @@ module.exports = function(grunt) {
 
     ftp: {
       options: {
-        host: secrets.akamai_1.host,
-        user: secrets.akamai_1.user,
-        pass: secrets.akamai_1.pass
+        // uncomment to enable deployment
+        // host: secrets.akamai_1.host,
+        // user: secrets.akamai_1.user,
+        // pass: secrets.akamai_1.pass
       },
       upload1: {
         files: {
